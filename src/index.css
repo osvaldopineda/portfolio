@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+  }
+  ::selection { background: #FF5C38; color: #0E0E10; }
+}
+
+/* Faint blueprint grid behind everything */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(236,234,227,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236,234,227,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Section eyebrow: monospace index label */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+}
+
+/* Big editorial serif accents */
+.serif-display { font-family: 'Instrument Serif', serif; }
+
+/* Animated underline for links */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+/* Custom thin scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0E0E10; }
+::-webkit-scrollbar-thumb { background: #2a2a2e; border-radius: 8px; border: 2px solid #0E0E10; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a40; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
