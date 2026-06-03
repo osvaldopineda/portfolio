@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: 'Osvaldo Pineda',
   role: 'Senior Fullstack Engineer · System Architect',
-  tagline: 'I architect secure, accessible systems that scale to millions.',
+  tagline: 'I design and build secure, accessible web platforms — front to back.',
   summary:
     'Senior Software Engineer with 7 years of experience architecting scalable web applications. Expert across the React ecosystem (Next.js, TypeScript), robust backends (Node.js, Python, gRPC) and Headless CMS migrations — with deep specialization in strict Web Accessibility (WCAG 2.1/2.2 AA), secure fintech platforms, and AI-assisted delivery in high-scale environments.',
   location: 'Mexico City, Mexico · GMT-6',
@@ -13,10 +13,10 @@ export const PROFILE = {
 }
 
 export const STATS = [
-  { value: '7+', label: 'Years engineering' },
-  { value: '$1M+', label: 'Monthly transactions handled' },
-  { value: '50k+', label: 'Banking customers served' },
-  { value: 'Millions', label: 'Daily users (Google Search)' },
+  { value: '7+ yrs', label: 'Senior engineering' },
+  { value: 'Fintech', label: 'Banking-grade & PCI DSS' },
+  { value: 'WCAG 2.2', label: 'Accessibility (AA)' },
+  { value: 'AI-assisted', label: 'Modern delivery' },
 ]
 
 export interface Job {
@@ -34,7 +34,7 @@ export const EXPERIENCE: Job[] = [
     role: 'Senior Software Engineer (via Qualitest)',
     period: 'Sep 2025 — Mar 2026',
     highlights: [
-      'Resolved high-priority Web Accessibility (WCAG 2.1/2.2 AA, ARIA) defects and shipped UI enhancements directly on the Google Search engine, ensuring inclusive UX for millions of daily users.',
+      'Resolved high-priority Web Accessibility (WCAG 2.1/2.2 AA, ARIA) defects and shipped UI enhancements directly on the Google Search engine, ensuring compliance and a more inclusive user experience.',
       'Engineered high-performance microservice communication with gRPC, integrating frontend components into Google’s proprietary internal infrastructure.',
       'Established strict cross-browser compatibility, responsive behavior and robust testing pipelines in a highly scaled, fast-paced environment.',
     ],
@@ -46,7 +46,7 @@ export const EXPERIENCE: Job[] = [
     period: 'Jun 2024 — Aug 2025',
     context: 'Enterprise clients: Stitch Fix · Life.Church',
     highlights: [
-      'Architected high-impact features for platforms serving millions, on modern React/Next.js infrastructure with rigorous performance optimization.',
+      'Architected high-impact features on modern React/Next.js infrastructure for high-traffic products, with rigorous performance optimization.',
       'Stitch Fix: led the frontend refactor with GraphQL and migrated content architecture to Contentstack (Headless CMS) — +25% user engagement.',
       'Life.Church: directed a full frontend redesign in Tailwind CSS with a modular architecture, building 20+ reusable components shipped via Vercel.',
       'Ran data-driven A/B testing (Amplitude) for +15% conversion, while holding >85% coverage with Jest & Cypress.',

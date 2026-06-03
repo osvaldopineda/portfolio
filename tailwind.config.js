@@ -9,13 +9,15 @@ export default {
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        ink:     '#0E0E10', // near-black warm background
-        surface: '#161619',
-        line:    'rgba(236,234,227,0.10)',
-        bone:    '#ECEAE3', // warm white text
-        muted:   '#928F85',
-        accent:  '#FF5C38', // vermilion
-        'accent-soft': 'rgba(255,92,56,0.12)',
+        // Light, warm, professional palette (matched to pinedawebstudio.com)
+        paper:   '#F7F4ED', // warm cream background
+        card:    '#FFFFFF', // surfaces / cards
+        ink:     '#17213B', // deep navy text
+        muted:   '#5C6573', // muted slate text
+        line:    'rgba(23,33,59,0.12)',
+        accent:  '#C0492E', // terracotta
+        'accent-soft': 'rgba(192,73,46,0.10)',
+        sand:    '#B79A78', // warm secondary
       },
       letterSpacing: {
         label: '0.18em',

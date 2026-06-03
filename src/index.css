@@ -7,16 +7,16 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body {
-    @apply bg-ink text-bone font-sans antialiased;
+    @apply bg-paper text-ink font-sans antialiased;
   }
-  ::selection { background: #FF5C38; color: #0E0E10; }
+  ::selection { background: #C0492E; color: #F7F4ED; }
 }
 
 /* Faint blueprint grid behind everything */
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(236,234,227,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(236,234,227,0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(23,33,59,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23,33,59,0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -43,9 +43,9 @@
 
 /* Custom thin scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0E0E10; }
-::-webkit-scrollbar-thumb { background: #2a2a2e; border-radius: 8px; border: 2px solid #0E0E10; }
-::-webkit-scrollbar-thumb:hover { background: #3a3a40; }
+::-webkit-scrollbar-track { background: #F7F4ED; }
+::-webkit-scrollbar-thumb { background: #d9d2c4; border-radius: 8px; border: 2px solid #F7F4ED; }
+::-webkit-scrollbar-thumb:hover { background: #c8c0ad; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

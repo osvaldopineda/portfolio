@@ -7,8 +7,8 @@ export default function Experience() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <SectionHeader
         index="01 / Experience"
-        title="Seven years building at scale."
-        kicker="From Google Search accessibility to fintech platforms moving millions — a track record of secure, performant, inclusive systems."
+        title="Seven years, shipped to production."
+        kicker="From Google Search accessibility to secure fintech platforms — a track record of dependable, performant, inclusive systems."
       />
 
       <div className="border-t border-line">
@@ -18,14 +18,14 @@ export default function Experience() {
               {/* Left: meta */}
               <div>
                 <p className="font-mono text-xs uppercase tracking-label text-muted">{job.period}</p>
-                <h3 className="serif-display mt-2 text-2xl text-bone transition-colors group-hover:text-accent">
+                <h3 className="serif-display mt-2 text-2xl text-ink transition-colors group-hover:text-accent">
                   {job.company}
                 </h3>
               </div>
 
               {/* Right: detail */}
               <div>
-                <p className="text-base font-semibold text-bone">{job.role}</p>
+                <p className="text-base font-semibold text-ink">{job.role}</p>
                 {job.context && <p className="mt-0.5 text-sm text-muted">{job.context}</p>}
 
                 <ul className="mt-4 space-y-2.5">
@@ -39,7 +39,7 @@ export default function Experience() {
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {job.stack.map((s) => (
-                    <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-bone/70">
+                    <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-ink/70">
                       {s}
                     </span>
                   ))}

@@ -18,20 +18,20 @@ export default function Contact() {
         <Reveal delay={0.1}>
           <a
             href={`mailto:${PROFILE.email}`}
-            className="link-underline mt-10 inline-block text-xl text-bone md:text-2xl"
+            className="link-underline mt-10 inline-block text-xl text-ink md:text-2xl"
           >
             {PROFILE.email}
           </a>
           <p className="mt-4 max-w-xl leading-relaxed text-muted">{PROFILE.availability}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={PROFILE.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-bone transition-colors hover:border-bone/40">
+            <a href={PROFILE.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink/40">
               <Github className="h-4 w-4" /> GitHub <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
             </a>
-            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-bone transition-colors hover:border-bone/40">
+            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-ink transition-colors hover:border-ink/40">
               <Linkedin className="h-4 w-4" /> LinkedIn <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
             </a>
-            <a href={`mailto:${PROFILE.email}`} className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition-transform active:scale-95">
+            <a href={`mailto:${PROFILE.email}`} className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-transform active:scale-95">
               <Mail className="h-4 w-4" /> Email me
             </a>
           </div>
@@ -40,18 +40,18 @@ export default function Contact() {
         {/* Education / languages */}
         <Reveal delay={0.16}>
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
-            <div className="bg-ink p-6">
+            <div className="bg-card p-6">
               <p className="font-mono text-xs uppercase tracking-label text-accent">Education</p>
-              <p className="mt-3 text-sm font-semibold text-bone">{EDUCATION.degree}</p>
+              <p className="mt-3 text-sm font-semibold text-ink">{EDUCATION.degree}</p>
               <p className="text-sm text-muted">{EDUCATION.school}</p>
             </div>
-            <div className="bg-ink p-6">
+            <div className="bg-card p-6">
               <p className="font-mono text-xs uppercase tracking-label text-accent">Certifications</p>
               <ul className="mt-3 space-y-1 text-sm text-muted">
                 {EDUCATION.certs.map((c) => <li key={c}>{c}</li>)}
               </ul>
             </div>
-            <div className="bg-ink p-6">
+            <div className="bg-card p-6">
               <p className="font-mono text-xs uppercase tracking-label text-accent">Languages</p>
               <ul className="mt-3 space-y-1 text-sm text-muted">
                 {EDUCATION.languages.map((l) => <li key={l}>{l}</li>)}
