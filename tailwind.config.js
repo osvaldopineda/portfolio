@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -9,15 +10,15 @@ export default {
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        // Light, warm, professional palette (matched to pinedawebstudio.com)
-        paper:   '#F7F4ED', // warm cream background
-        card:    '#FFFFFF', // surfaces / cards
-        ink:     '#17213B', // deep navy text
-        muted:   '#5C6573', // muted slate text
-        line:    'rgba(23,33,59,0.12)',
-        accent:  '#C0492E', // terracotta
-        'accent-soft': 'rgba(192,73,46,0.10)',
-        sand:    '#B79A78', // warm secondary
+        // Themed via CSS variables (see index.css :root / .dark)
+        paper:  'rgb(var(--paper) / <alpha-value>)',
+        card:   'rgb(var(--card) / <alpha-value>)',
+        ink:    'rgb(var(--ink) / <alpha-value>)',
+        muted:  'rgb(var(--muted) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        sand:   'rgb(var(--sand) / <alpha-value>)',
+        line:   'var(--line)',
+        'accent-soft': 'var(--accent-soft)',
       },
       letterSpacing: {
         label: '0.18em',

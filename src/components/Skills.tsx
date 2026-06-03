@@ -4,7 +4,7 @@ import { SKILLS } from '../data/cv'
 
 export default function Skills() {
   return (
-    <section id="skills" className="grid-bg border-y border-line bg-card/40">
+    <section id="skills" className="border-y border-line bg-card/40">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <SectionHeader index="02 / Capabilities" title="The toolkit." />
 

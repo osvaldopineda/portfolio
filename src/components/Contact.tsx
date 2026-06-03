@@ -4,10 +4,10 @@ import { PROFILE, EDUCATION } from '../data/cv'
 
 export default function Contact() {
   return (
-    <section id="contact" className="grid-bg border-t border-line">
+    <section id="contact" className="border-t border-line">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <Reveal>
-          <p className="eyebrow text-accent">04 / Contact</p>
+          <p className="eyebrow text-accent">05 / Contact</p>
           <h2 className="serif-display mt-3 text-5xl leading-[1.05] md:text-7xl">
             Let’s build something
             <br />

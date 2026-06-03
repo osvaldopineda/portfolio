@@ -5,19 +5,35 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light theme (default) */
+  :root {
+    --paper: 247 244 237;        /* #F7F4ED warm cream */
+    --card:  255 255 255;        /* #FFFFFF */
+    --ink:   23 33 59;           /* #17213B deep navy */
+    --muted: 92 101 115;         /* #5C6573 */
+    --accent: 14 124 115;        /* #0E7C73 teal */
+    --sand:  183 154 120;        /* #B79A78 */
+    --line:  rgba(23,33,59,0.12);
+    --accent-soft: rgba(14,124,115,0.12);
+  }
+  /* Dark theme */
+  .dark {
+    --paper: 15 20 28;           /* #0F141C */
+    --card:  23 29 39;           /* #171D27 */
+    --ink:   233 231 223;        /* #E9E7DF warm off-white */
+    --muted: 152 162 178;        /* #98A2B2 */
+    --accent: 30 178 164;        /* #1EB2A4 brighter teal */
+    --sand:  183 154 120;
+    --line:  rgba(233,231,223,0.12);
+    --accent-soft: rgba(30,178,164,0.16);
+  }
+
   html { scroll-behavior: smooth; }
   body {
     @apply bg-paper text-ink font-sans antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
-  ::selection { background: #C0492E; color: #F7F4ED; }
-}
-
-/* Faint blueprint grid behind everything */
-.grid-bg {
-  background-image:
-    linear-gradient(to right, rgba(23,33,59,0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(23,33,59,0.045) 1px, transparent 1px);
-  background-size: 64px 64px;
+  ::selection { background: rgb(var(--accent)); color: rgb(var(--paper)); }
 }
 
 /* Section eyebrow: monospace index label */
@@ -41,11 +57,11 @@
 }
 .link-underline:hover { background-size: 100% 1px; }
 
-/* Custom thin scrollbar */
+/* Custom thin scrollbar (theme-aware) */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #F7F4ED; }
-::-webkit-scrollbar-thumb { background: #d9d2c4; border-radius: 8px; border: 2px solid #F7F4ED; }
-::-webkit-scrollbar-thumb:hover { background: #c8c0ad; }
+::-webkit-scrollbar-track { background: rgb(var(--paper)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--muted) / 0.4); border-radius: 8px; border: 2px solid rgb(var(--paper)); }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--muted) / 0.65); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

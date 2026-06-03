@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
       <SectionHeader
-        index="03 / Selected work"
+        index="04 / Selected work"
         title="Things I build for the craft."
         kicker="Side projects where I get to own the whole stack — design, engineering and the details in between."
       />

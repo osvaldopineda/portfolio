@@ -8,6 +8,16 @@
     <meta property="og:title" content="Osvaldo Pineda — Senior Fullstack Engineer" />
     <meta property="og:description" content="Architecting secure, accessible systems that scale to millions." />
     <meta property="og:type" content="website" />
+    <script>
+      // Apply theme before paint to avoid flash
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

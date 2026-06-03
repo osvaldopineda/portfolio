@@ -10,7 +10,7 @@ const fade = (delay: number) => ({
 
 export default function Hero() {
   return (
-    <section id="top" className="grid-bg relative flex min-h-screen items-center overflow-hidden">
+    <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <div className="mx-auto w-full max-w-6xl px-6 pt-28 pb-16">
         <motion.p {...fade(0.05)} className="mb-7 flex items-center gap-2.5 eyebrow text-muted">
           <span className="relative flex h-2 w-2">

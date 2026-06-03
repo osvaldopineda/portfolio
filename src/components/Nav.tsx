@@ -1,8 +1,10 @@
 import { PROFILE } from '../data/cv'
+import ThemeToggle from './ThemeToggle'
 
 const LINKS = [
   { href: '#work', label: 'Work' },
   { href: '#skills', label: 'Skills' },
+  { href: '#approach', label: 'Approach' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -21,14 +23,17 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <a
-          href={PROFILE.cv}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full border border-accent/50 px-4 py-1.5 font-mono text-xs uppercase tracking-label text-accent transition-colors hover:bg-accent hover:text-white"
-        >
-          CV ↓
-        </a>
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
+          <a
+            href={PROFILE.cv}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-accent/50 px-4 py-1.5 font-mono text-xs uppercase tracking-label text-accent transition-colors hover:bg-accent hover:text-white"
+          >
+            CV ↓
+          </a>
+        </div>
       </nav>
     </header>
   )
