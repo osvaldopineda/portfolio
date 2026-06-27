@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <>
+    <div className="grain">
       <Nav />
       <main>
         <Hero />
@@ -18,6 +18,6 @@ export default function App() {
         <Projects />
         <Contact />
       </main>
-    </>
+    </div>
   )
 }

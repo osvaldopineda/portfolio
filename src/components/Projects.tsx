@@ -1,47 +1,48 @@
 import { ArrowUpRight, Github } from 'lucide-react'
 import Reveal from './Reveal'
-import SectionHeader from './SectionHeader'
+import SectionTitle from './SectionTitle'
 import { PROJECTS } from '../data/cv'
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <SectionHeader
-        index="04 / Selected work"
-        title="Things I build for the craft."
-        kicker="Side projects where I get to own the whole stack — design, engineering and the details in between."
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+      <SectionTitle
+        title={<>Things I build <span className="italic text-clay">for the craft.</span></>}
+        lead="Side projects where I get to own the whole stack — design, engineering and the details in between."
       />
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="border-t border-line">
         {PROJECTS.map((p, i) => (
-          <Reveal key={p.name} delay={i * 0.06}>
-            <article className="group flex h-full flex-col rounded-2xl border border-line bg-card p-7 transition-colors hover:border-accent/40">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="serif-display text-3xl text-ink">{p.name}</h3>
-                <span className="font-mono text-xs text-muted">{p.year}</span>
+          <Reveal key={p.name} delay={i * 0.05}>
+            <article className="group grid gap-6 border-b border-line py-12 md:grid-cols-[1fr_minmax(0,420px)]">
+              <div>
+                <div className="flex items-baseline gap-4">
+                  <h3 className="serif text-4xl leading-none transition-colors group-hover:text-clay md:text-6xl">{p.name}</h3>
+                  <span className="font-mono text-xs text-muted">{p.year}</span>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.stack.map((s) => (
+                    <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-muted">
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <p className="mt-3 flex-1 leading-relaxed text-muted">{p.blurb}</p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {p.stack.map((s) => (
-                  <span key={s} className="rounded-full border border-line px-2.5 py-1 font-mono text-[11px] text-ink/70">
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-6 flex items-center gap-4 border-t border-line pt-5">
-                {p.live && (
-                  <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-accent">
-                    Live demo <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                )}
-                {p.repo && (
-                  <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink">
-                    <Github className="h-4 w-4" /> Code
-                  </a>
-                )}
+              <div className="flex flex-col">
+                <p className="leading-relaxed text-muted">{p.blurb}</p>
+                <div className="mt-6 flex items-center gap-5">
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-clay">
+                      Live demo <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                  {p.repo && (
+                    <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink">
+                      <Github className="h-4 w-4" /> Code
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           </Reveal>

@@ -17,15 +17,16 @@ Single-page personal portfolio for Osvaldo Pineda (Senior Fullstack Engineer). S
 
 ## Structure
 - `src/main.tsx` — entry, mounts `<App/>`, imports `index.css`.
-- `src/App.tsx` — composes the page: Nav → Hero → Experience → Skills → Projects → Contact.
-- `src/components/` — one component per section, all default exports. `Reveal.tsx` (framer-motion scroll-in wrapper) and `SectionHeader.tsx` are shared primitives.
+- `src/App.tsx` — composes the page (wrapped in `.grain`): Nav → Hero → Experience → Skills → HowIWork → Projects → Contact.
+- `src/components/` — one component per section, all default exports. `Reveal.tsx` (framer-motion scroll-in, ease-out-expo), `SectionTitle.tsx` (editorial serif heading, no numbered/uppercase eyebrow) and `Marquee.tsx` (hero credibility ribbon) are shared primitives.
 - `src/data/cv.ts` — **single source of truth** for all content: `PROFILE`, `STATS`, `EXPERIENCE`, `SKILLS`, `PROJECTS`, `EDUCATION`. Edit content here, not in components. Exports typed interfaces (`Job`, `Project`).
 - `src/index.css` — Tailwind layers, font `@import`, `.grid-bg` and other custom utilities.
 - `public/osvaldo-pineda-cv.pdf` — CV, linked via `PROFILE.cv` (`/osvaldo-pineda-cv.pdf`).
 
 ## Conventions
 - Update site content by editing `src/data/cv.ts`; components read from it.
-- Design tokens live in `tailwind.config.js` `theme.extend`: colors (`ink`, `surface`, `bone`, `muted`, `accent` vermilion `#FF5C38`), fonts (`serif`=Instrument Serif, `sans`=Schibsted Grotesk, `mono`=JetBrains Mono), and `tracking-label` (0.18em). Use these tokens, not raw hex/px.
+- Design tokens: colors are themed via CSS vars in `index.css` (`:root` light / `.dark`) and exposed in `tailwind.config.js` as `paper`, `raised`, `ink`, `muted`, `accent` (teal, brand), `clay` (terracotta editorial accent), `line`. `slab`/`slab-ink`/`slab-muted` are **constant** (theme-independent) for the dark contrast band (HowIWork). Fonts: `serif`=Instrument Serif (display, weight 400 only — size carries hierarchy, not weight), `sans`=Schibsted Grotesk (body), `mono`=JetBrains Mono (years/labels, used sparingly). Use these tokens, not raw hex/px.
+- Editorial rules (post-redesign): **no** numbered section markers (`01/02/03`), **no** uppercase tracked eyebrow above sections, **no** identical card grids, **no** hero stats-grid. Warmth comes from serif type + clay accent + the dark slab band, not a cream body bg. Paper grain via `.grain` utility.
 - Section anchors used by the nav: `#work`, `#skills`, `#projects`, `#contact`, `#top`.
 - TS is strict with `noUnusedLocals`/`noUnusedParameters` — unused vars break the build.
 

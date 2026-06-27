@@ -1,5 +1,4 @@
 import Reveal from './Reveal'
-import SectionHeader from './SectionHeader'
 
 const PRINCIPLES = [
   {
@@ -26,21 +25,24 @@ const PRINCIPLES = [
 
 export default function HowIWork() {
   return (
-    <section id="approach" className="border-y border-line bg-card/40">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <SectionHeader
-          index="03 / How I work"
-          title="Principles, not buzzwords."
-          kicker="The standards I hold every project to — whether it’s a local business site or a banking platform."
-        />
+    <section id="approach" className="bg-slab text-slab-ink">
+      <div className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+        <Reveal className="mb-16 max-w-2xl">
+          <h2 className="serif text-4xl leading-[1.02] tracking-tight2 md:text-6xl">
+            Principles, not <span className="italic text-[#E08763]">buzzwords.</span>
+          </h2>
+          <p className="mt-5 text-[1.05rem] leading-relaxed text-slab-muted">
+            The standards I hold every project to — whether it’s a local business site or a banking platform.
+          </p>
+        </Reveal>
 
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border-t border-white/10 md:grid-cols-2">
           {PRINCIPLES.map((p, i) => (
-            <Reveal key={p.n} delay={i * 0.05} className="bg-card">
-              <div className="h-full p-8">
-                <span className="font-mono text-sm text-accent">{p.n}</span>
-                <h3 className="serif-display mt-3 text-2xl text-ink">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
+            <Reveal key={p.n} delay={i * 0.05}>
+              <div className="border-b border-white/10 py-10 md:px-2">
+                <span className="font-mono text-sm text-[#E08763]">{p.n}</span>
+                <h3 className="serif mt-4 text-3xl">{p.title}</h3>
+                <p className="mt-3 max-w-md leading-relaxed text-slab-muted">{p.body}</p>
               </div>
             </Reveal>
           ))}

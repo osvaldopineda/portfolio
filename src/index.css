@@ -5,47 +5,53 @@
 @tailwind utilities;
 
 @layer base {
-  /* Light theme (default) */
+  /* Light — warm printed paper, espresso ink */
   :root {
-    --paper: 247 244 237;        /* #F7F4ED warm cream */
-    --card:  255 255 255;        /* #FFFFFF */
-    --ink:   23 33 59;           /* #17213B deep navy */
-    --muted: 92 101 115;         /* #5C6573 */
-    --accent: 14 124 115;        /* #0E7C73 teal */
-    --sand:  183 154 120;        /* #B79A78 */
-    --line:  rgba(23,33,59,0.12);
-    --accent-soft: rgba(14,124,115,0.12);
+    --paper:  243 239 230;       /* #F3EFE6 warm paper */
+    --raised: 251 249 244;       /* #FBF9F4 raised surface */
+    --ink:    28 26 23;          /* #1C1A17 espresso ink */
+    --muted:  107 100 90;        /* #6B645A warm gray */
+    --accent: 11 102 94;         /* #0B665E teal (brand, AA on paper) */
+    --clay:   197 106 75;        /* #C56A4B terracotta */
+    --line:   rgba(28,26,23,0.13);
   }
-  /* Dark theme */
+  /* Dark — warm black, cream ink */
   .dark {
-    --paper: 15 20 28;           /* #0F141C */
-    --card:  23 29 39;           /* #171D27 */
-    --ink:   233 231 223;        /* #E9E7DF warm off-white */
-    --muted: 152 162 178;        /* #98A2B2 */
-    --accent: 30 178 164;        /* #1EB2A4 brighter teal */
-    --sand:  183 154 120;
-    --line:  rgba(233,231,223,0.12);
-    --accent-soft: rgba(30,178,164,0.16);
+    --paper:  22 20 15;          /* #16140F */
+    --raised: 31 28 22;          /* #1F1C16 */
+    --ink:    236 231 220;       /* #ECE7DC */
+    --muted:  162 154 140;       /* #A29A8C */
+    --accent: 43 179 163;        /* #2BB3A3 brighter teal */
+    --clay:   224 135 99;        /* #E08763 */
+    --line:   rgba(236,231,220,0.14);
   }
 
   html { scroll-behavior: smooth; }
   body {
     @apply bg-paper text-ink font-sans antialiased;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
-  ::selection { background: rgb(var(--accent)); color: rgb(var(--paper)); }
+  ::selection { background: rgb(var(--clay)); color: #fff; }
+
+  /* Editorial display: Instrument Serif tightened */
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
 }
 
-/* Section eyebrow: monospace index label */
-.eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 11px;
+/* Paper grain — subtle print texture over the whole canvas */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
 }
+.dark .grain::before { mix-blend-mode: screen; opacity: 0.06; }
 
-/* Big editorial serif accents */
-.serif-display { font-family: 'Instrument Serif', serif; }
+.serif { font-family: 'Instrument Serif', serif; }
 
 /* Animated underline for links */
 .link-underline {
@@ -53,16 +59,17 @@
   background-size: 0% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.3s ease;
+  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .link-underline:hover { background-size: 100% 1px; }
 
-/* Custom thin scrollbar (theme-aware) */
+/* Thin theme-aware scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: rgb(var(--paper)); }
-::-webkit-scrollbar-thumb { background: rgb(var(--muted) / 0.4); border-radius: 8px; border: 2px solid rgb(var(--paper)); }
-::-webkit-scrollbar-thumb:hover { background: rgb(var(--muted) / 0.65); }
+::-webkit-scrollbar-thumb { background: rgb(var(--muted) / 0.35); border-radius: 8px; border: 3px solid rgb(var(--paper)); }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--muted) / 0.6); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .animate-marquee { animation: none !important; }
 }

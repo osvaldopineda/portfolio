@@ -1,30 +1,26 @@
 import Reveal from './Reveal'
-import SectionHeader from './SectionHeader'
+import SectionTitle from './SectionTitle'
 import { SKILLS } from '../data/cv'
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-y border-line bg-card/40">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <SectionHeader index="02 / Capabilities" title="The toolkit." />
+    <section id="skills" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+      <SectionTitle title={<>The <span className="italic text-clay">toolkit.</span></>} />
 
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2">
-          {SKILLS.map((cat, i) => (
-            <Reveal key={cat.group} delay={i * 0.05} className="bg-card">
-              <div className="h-full p-7">
-                <h3 className="font-mono text-xs uppercase tracking-label text-accent">{cat.group}</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {cat.items.map((s) => (
-                    <span key={s} className="rounded-lg border border-line bg-paper px-3 py-1.5 text-sm text-ink/85">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
+      <dl className="border-t border-line">
+        {SKILLS.map((cat, i) => (
+          <Reveal key={cat.group} delay={i * 0.04}>
+            <div className="grid items-baseline gap-3 border-b border-line py-8 md:grid-cols-[240px_1fr]">
+              <dt className="serif text-2xl text-clay">{cat.group}</dt>
+              <dd className="flex flex-wrap gap-x-6 gap-y-2.5">
+                {cat.items.map((s) => (
+                  <span key={s} className="text-[1.05rem] leading-snug">{s}</span>
+                ))}
+              </dd>
+            </div>
+          </Reveal>
+        ))}
+      </dl>
     </section>
   )
 }
