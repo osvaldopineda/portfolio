@@ -51,7 +51,7 @@ export default function Nav() {
             href={PROFILE.cv}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 md:inline-flex"
+            className="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
           >
             {ui.nav.cv}
           </a>
@@ -82,17 +82,8 @@ export default function Nav() {
               </a>
             ))}
           </div>
-          <div className="mt-5 flex items-center justify-between">
+          <div className="mt-5">
             <LanguageToggle />
-            <a
-              href={PROFILE.cv}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-              className="rounded-full bg-ink px-5 py-2 text-sm font-medium text-paper"
-            >
-              {ui.nav.cv}
-            </a>
           </div>
         </div>
       )}
