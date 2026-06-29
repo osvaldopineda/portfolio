@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Instrument Serif"', 'serif'],
-        sans:  ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+        serif: ['"Fraunces"', 'serif'],
+        sans:  ['"Inter"', 'system-ui', 'sans-serif'],
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,23 +7,23 @@
 @layer base {
   /* Light — warm printed paper, espresso ink */
   :root {
-    --paper:  243 239 230;       /* #F3EFE6 warm paper */
-    --raised: 251 249 244;       /* #FBF9F4 raised surface */
-    --ink:    28 26 23;          /* #1C1A17 espresso ink */
-    --muted:  107 100 90;        /* #6B645A warm gray */
-    --accent: 11 102 94;         /* #0B665E teal (brand, AA on paper) */
-    --clay:   197 106 75;        /* #C56A4B terracotta */
-    --line:   rgba(28,26,23,0.13);
+    --paper:  234 224 213;       /* #EAE0D5 almond cream */
+    --raised: 242 236 225;       /* #F2ECE1 raised surface */
+    --ink:    42 36 30;          /* #2A241E warm espresso ink */
+    --muted:  126 113 96;        /* #7E7160 warm taupe */
+    --accent: 95 107 69;         /* #5F6B45 olive/sage (brand) */
+    --clay:   94 80 63;          /* #5E503F stone brown (warm secondary) */
+    --line:   rgba(42,36,30,0.13);
   }
   /* Dark — warm black, cream ink */
   .dark {
-    --paper:  22 20 15;          /* #16140F */
-    --raised: 31 28 22;          /* #1F1C16 */
-    --ink:    236 231 220;       /* #ECE7DC */
-    --muted:  162 154 140;       /* #A29A8C */
-    --accent: 43 179 163;        /* #2BB3A3 brighter teal */
-    --clay:   224 135 99;        /* #E08763 */
-    --line:   rgba(236,231,220,0.14);
+    --paper:  27 25 21;          /* #1B1915 */
+    --raised: 37 33 25;          /* #252119 */
+    --ink:    234 224 213;       /* #EAE0D5 almond cream */
+    --muted:  168 156 138;       /* #A89C8A */
+    --accent: 147 165 110;       /* #93A56E luminous olive */
+    --clay:   179 154 110;       /* #B39A6E warm tan */
+    --line:   rgba(234,224,213,0.14);
   }
 
   html { scroll-behavior: smooth; }
@@ -51,7 +51,7 @@
 }
 .dark .grain::before { mix-blend-mode: screen; opacity: 0.06; }
 
-.serif { font-family: 'Instrument Serif', serif; }
+.serif { font-family: 'Fraunces', serif; }
 
 /* Animated underline for links */
 .link-underline {
