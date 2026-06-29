@@ -122,7 +122,7 @@ const en: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content' },
+    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu' },
     hero: {
       downloadCv: 'Download CV',
       getInTouch: 'Get in touch',

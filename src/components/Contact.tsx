@@ -8,7 +8,7 @@ export default function Contact() {
   const t = ui.contact
   const edu = cv.education
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section id="contact" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <Reveal>
         <h2 className="serif text-5xl leading-[0.98] tracking-tight2 md:text-8xl">
           {t.titleLine1}

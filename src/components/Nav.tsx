@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import { PROFILE } from '../data/cv'
 import { useI18n } from '../i18n/context'
 import ThemeToggle from './ThemeToggle'
@@ -5,6 +7,7 @@ import LanguageToggle from './LanguageToggle'
 
 export default function Nav() {
   const { ui } = useI18n()
+  const [open, setOpen] = useState(false)
   const links = [
     { href: '#work', label: ui.nav.work },
     { href: '#approach', label: ui.nav.approach },
@@ -12,6 +15,14 @@ export default function Nav() {
     { href: '#projects', label: ui.nav.projects },
     { href: '#contact', label: ui.nav.contact },
   ]
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-md">
       <a
@@ -32,18 +43,59 @@ export default function Nav() {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <LanguageToggle />
+          <div className="hidden md:block">
+            <LanguageToggle />
+          </div>
           <ThemeToggle />
           <a
             href={PROFILE.cv}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
+            className="hidden rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             {ui.nav.cv}
           </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={ui.nav.menu}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink/40 md:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </nav>
+
+      {open && (
+        <div id="mobile-menu" className="border-t border-line bg-paper px-6 py-4 md:hidden">
+          <div className="flex flex-col">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="serif border-b border-line py-3 text-2xl text-ink/90 transition-colors hover:text-clay"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+          <div className="mt-5 flex items-center justify-between">
+            <LanguageToggle />
+            <a
+              href={PROFILE.cv}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="rounded-full bg-ink px-5 py-2 text-sm font-medium text-paper"
+            >
+              {ui.nav.cv}
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

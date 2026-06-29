@@ -5,7 +5,7 @@ export default function OffTheClock() {
   const { ui } = useI18n()
   const t = ui.offclock
   return (
-    <section className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+    <section className="mx-auto max-w-5xl px-6 py-16 md:py-32">
       <Reveal>
         <h2 className="serif text-4xl leading-[1.02] tracking-tight2 md:text-5xl">
           {t.title.pre}<span className="italic text-accent">{t.title.accent}</span>{t.title.post}

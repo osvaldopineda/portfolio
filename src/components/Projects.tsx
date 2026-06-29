@@ -7,7 +7,7 @@ export default function Projects() {
   const { cv, ui } = useI18n()
   const t = ui.projects
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionTitle
         title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>}
         lead={t.lead}

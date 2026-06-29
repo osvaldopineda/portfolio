@@ -6,7 +6,7 @@ export default function HowIWork() {
   const t = ui.approach
   return (
     <section id="approach" className="bg-slab text-slab-ink">
-      <div className="mx-auto max-w-5xl px-6 py-28 md:py-36">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-36">
         <Reveal className="mb-16 max-w-2xl">
           <h2 className="serif text-4xl leading-[1.02] tracking-tight2 md:text-6xl">
             {t.title.pre}<span className="italic text-[#93A56E]">{t.title.accent}</span>{t.title.post}

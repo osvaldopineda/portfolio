@@ -6,7 +6,7 @@ export default function Skills() {
   const { cv, ui } = useI18n()
   const t = ui.skills
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionTitle title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>} />
 
       <dl className="border-t border-line">
