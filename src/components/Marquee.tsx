@@ -1,17 +1,19 @@
-import { STATS } from '../data/cv'
+import { useI18n } from '../i18n/context'
 
 /**
  * Infinite credibility ribbon — replaces the hero stats-grid template.
- * Two identical tracks scroll as one seamless loop; pauses on reduced-motion.
+ * Each item is a coherent credential (value + context kept together), separated
+ * by a dot. Two identical tracks scroll as one seamless loop.
  */
 export default function Marquee() {
-  const items = STATS.flatMap((s) => [s.value, s.label])
+  const { cv } = useI18n()
   const track = (
-    <ul className="flex shrink-0 items-center gap-10 pr-10" aria-hidden="false">
-      {items.map((t, i) => (
-        <li key={i} className="flex items-center gap-10 whitespace-nowrap">
-          <span className={i % 2 === 0 ? 'serif text-2xl text-clay' : 'text-sm text-muted'}>{t}</span>
-          <span className="h-1 w-1 rounded-full bg-muted/50" />
+    <ul className="flex shrink-0 items-center">
+      {cv.stats.map((s, i) => (
+        <li key={i} className="flex items-center whitespace-nowrap">
+          <span className="serif text-2xl text-clay">{s.value}</span>
+          <span className="ml-2.5 text-sm text-muted">{s.label}</span>
+          <span className="mx-9 h-1 w-1 rounded-full bg-muted/40" aria-hidden="true" />
         </li>
       ))}
     </ul>
@@ -21,7 +23,7 @@ export default function Marquee() {
       <div className="flex animate-marquee">
         {track}
         {/* duplicate for seamless wrap */}
-        <div aria-hidden className="flex">{track}</div>
+        <div aria-hidden="true" className="flex">{track}</div>
       </div>
     </div>
   )

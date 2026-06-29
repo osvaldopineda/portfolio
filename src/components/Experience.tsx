@@ -1,17 +1,19 @@
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
-import { EXPERIENCE } from '../data/cv'
+import { useI18n } from '../i18n/context'
 
 export default function Experience() {
+  const { cv, ui } = useI18n()
+  const t = ui.experience
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section id="work" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionTitle
-        title={<>Seven years, <span className="italic text-clay">shipped to production.</span></>}
-        lead="From Google Search accessibility to secure fintech platforms — a track record of dependable, performant, inclusive systems."
+        title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>}
+        lead={t.lead}
       />
 
       <div className="border-t border-line">
-        {EXPERIENCE.map((job, i) => (
+        {cv.experience.map((job, i) => (
           <Reveal key={job.company} delay={i * 0.04}>
             <article className="group grid gap-6 border-b border-line py-12 transition-colors md:grid-cols-[240px_1fr]">
               {/* meta */}

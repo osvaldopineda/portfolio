@@ -1,18 +1,20 @@
 import { ArrowUpRight, Github } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
-import { PROJECTS } from '../data/cv'
+import { useI18n } from '../i18n/context'
 
 export default function Projects() {
+  const { cv, ui } = useI18n()
+  const t = ui.projects
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionTitle
-        title={<>Things I build <span className="italic text-clay">for the craft.</span></>}
-        lead="Side projects where I get to own the whole stack — design, engineering and the details in between."
+        title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>}
+        lead={t.lead}
       />
 
       <div className="border-t border-line">
-        {PROJECTS.map((p, i) => (
+        {cv.projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.05}>
             <article className="group grid gap-6 border-b border-line py-12 md:grid-cols-[1fr_minmax(0,420px)]">
               <div>
@@ -34,12 +36,12 @@ export default function Projects() {
                 <div className="mt-6 flex items-center gap-5">
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-clay">
-                      Live demo <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      {t.liveDemo} <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
                   )}
                   {p.repo && (
                     <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink">
-                      <Github className="h-4 w-4" /> Code
+                      <Github className="h-4 w-4" /> {t.code}
                     </a>
                   )}
                 </div>
