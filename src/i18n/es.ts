@@ -6,17 +6,15 @@ const es: LocaleBundle = {
       role: 'Ingeniero Fullstack Senior · SaaS y Fintech con IA',
       tagline: 'Diseño y construyo plataformas web seguras y accesibles — de la cara al fondo.',
       summary:
-        'Ingeniero Fullstack Senior con 7 años construyendo plataformas web seguras y accesibles en SaaS y fintech — desde sistemas de grado bancario (PCI DSS) hasta trabajo de accesibilidad en Google Search. Con experiencia en todo el ecosistema de React (Next.js, TypeScript) y en backends (Node.js, Java, Python, GraphQL, gRPC), y un enfoque creciente en entregar con IA (desarrollo asistido por IA e integración de IA/LLM). Trabajo pegado al producto — siendo dueño de la arquitectura de frontend, sopesando los trade-offs de costo y escalabilidad, y haciendo equipo con fundadores y stakeholders, no solo escribiendo código.',
+        'Ingeniero Fullstack Senior, 7 años en SaaS y fintech — de sistemas bancarios PCI DSS a accesibilidad en Google Search. Soy dueño de la arquitectura de frontend de punta a punta, entrego con flujos de trabajo asistidos por IA, y hago equipo con fundadores y stakeholders — no solo escribo código.',
       location: 'Ciudad de México, México · GMT-6',
       availability: 'Abierto a colaboración remota global, B2B, y reubicación / patrocinio.',
     },
     stats: [
       { value: 'Google Search', label: 'accesibilidad a escala' },
       { value: 'PCI DSS', label: 'fintech de grado bancario' },
-      { value: '2.3M+ users', label: 'Stitch Fix' },
-      { value: '$1M+/mo', label: 'pagos en tiempo real' },
-      { value: '7+ años', label: 'ingeniería senior' },
-      { value: 'AI-driven', label: 'entrega moderna' },
+      { value: '2.3M+ usuarios', label: 'Stitch Fix' },
+      { value: '$1M+/mes', label: 'pagos en tiempo real' },
     ],
     experience: [
       {
@@ -89,12 +87,9 @@ const es: LocaleBundle = {
       },
     ],
     skills: [
-      { group: 'Frontend', items: ['React.js', 'Next.js (SSR/ISR)', 'Vite', 'TypeScript', 'JavaScript (ES6+)', 'Redux', 'React Hook Form', 'Tailwind CSS', 'shadcn/ui', 'Storybook', 'Performance Optimization', 'WCAG 2.1/2.2 AA · ARIA'] },
-      { group: 'Backend y APIs', items: ['Node.js', 'Express', 'Java', 'Python', 'FastAPI', 'Django', 'REST', 'GraphQL', 'gRPC', 'WebSockets', 'JWT'] },
-      { group: 'Datos y CMS', items: ['PostgreSQL', 'MongoDB', 'Prisma', 'Contentstack', 'RealmDB'] },
-      { group: 'Cloud e Infra', items: ['AWS (EC2, S3, RDS, Lambda)', 'GCP', 'Vercel', 'On-premise/Hybrid', 'Docker'] },
-      { group: 'CI/CD y Control de Versiones', items: ['GitHub', 'GitLab', 'Bitbucket', 'GitHub Actions', 'GitLab CI', 'Jenkins', 'CircleCI'] },
-      { group: 'Testing y Prácticas', items: ['Jest', 'Cypress', 'React Testing Library', 'Playwright', 'Code Review', 'Agile/Scrum', 'A/B Testing & Feature Flags'] },
+      { group: 'Frontend', items: ['React.js', 'Next.js (SSR/ISR)', 'TypeScript', 'Vite', 'Redux', 'Tailwind CSS', 'shadcn/ui', 'Storybook', 'Performance Optimization', 'WCAG 2.1/2.2 AA · ARIA'] },
+      { group: 'Backend y Datos', items: ['Node.js', 'Java', 'Python (FastAPI · Django)', 'REST', 'GraphQL', 'gRPC', 'WebSockets', 'PostgreSQL', 'MongoDB', 'Prisma'] },
+      { group: 'Cloud y Calidad', items: ['AWS (EC2, S3, RDS, Lambda)', 'GCP', 'Vercel', 'Docker', 'GitHub Actions CI/CD', 'Jest', 'React Testing Library', 'Playwright', 'A/B Testing & Feature Flags'] },
       { group: 'IA y Agentes', items: ['AI-Assisted Development', 'Multi-Agent Workflows', 'LLM / AI API Integration', 'Prompt Engineering', 'Claude Code · Cursor'] },
     ],
     projects: [
@@ -105,6 +100,17 @@ const es: LocaleBundle = {
         live: 'https://asoiaf-map.pages.dev',
         repo: 'https://github.com/osvaldopineda/asoiaf-map',
         year: '2026',
+        image: '/projects/mundo-conocido.jpg',
+        imageAlt: 'Mapa interactivo de Poniente dibujado a mano con regiones clicables',
+      },
+      {
+        name: 'Lyra',
+        blurb: 'Tu historial musical como una galaxia 3D navegable — cada artista es una estrella con tamaño según cuánto lo escuchas, los géneros forman constelaciones envueltas en nebulosas animadas, alimentada con datos de Spotify y Last.fm.',
+        stack: ['Three.js', 'GLSL', 'TypeScript', 'Spotify API', 'Last.fm API'],
+        live: 'https://lyra-313.pages.dev',
+        year: '2026',
+        image: '/projects/lyra.jpg',
+        imageAlt: 'Galaxia 3D donde cada estrella es un artista, agrupada en constelaciones de géneros',
       },
       {
         name: 'FinDash',
@@ -112,6 +118,13 @@ const es: LocaleBundle = {
         stack: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
         live: 'https://findash-icc.pages.dev',
         year: '2026',
+      },
+      {
+        name: 'TripSurprise',
+        blurb: 'Itinerarios de viaje colaborativos — un grupo comparte un mismo plan en tiempo real: eventos por día, mapa, clima, presupuesto y un wallet de documentos como fuente de la verdad, más eventos sorpresa que se revelan con el tiempo.',
+        stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
+        year: '2026',
+        status: 'En desarrollo — primera parada: Japón',
       },
     ],
     education: {

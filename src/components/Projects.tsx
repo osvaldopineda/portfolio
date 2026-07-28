@@ -16,12 +16,13 @@ export default function Projects() {
       <div className="border-t border-line">
         {cv.projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.05}>
-            <article className="group grid gap-6 border-b border-line py-12 md:grid-cols-[1fr_minmax(0,420px)]">
+            <article className="group grid gap-8 border-b border-line py-12 md:grid-cols-[1fr_minmax(0,420px)] md:items-center">
               <div>
                 <div className="flex items-baseline gap-4">
                   <h3 className="serif text-4xl leading-none transition-colors group-hover:text-clay md:text-6xl">{p.name}</h3>
                   <span className="font-mono text-xs text-muted">{p.year}</span>
                 </div>
+                <p className="mt-5 max-w-xl leading-relaxed text-muted">{p.blurb}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((s) => (
                     <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-muted">
@@ -29,11 +30,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </div>
-
-              <div className="flex flex-col">
-                <p className="leading-relaxed text-muted">{p.blurb}</p>
-                <div className="mt-6 flex items-center gap-5">
+                <div className="mt-6 flex flex-wrap items-center gap-5">
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-clay">
                       {t.liveDemo} <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -44,8 +41,20 @@ export default function Projects() {
                       <Github className="h-4 w-4" /> {t.code}
                     </a>
                   )}
+                  {p.status && <span className="font-mono text-xs text-muted">{p.status}</span>}
                 </div>
               </div>
+
+              {p.image &&
+                (p.live ? (
+                  <a href={p.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true" className="overflow-hidden rounded-lg border border-line">
+                    <img src={p.image} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                  </a>
+                ) : (
+                  <div className="overflow-hidden rounded-lg border border-line">
+                    <img src={p.image} alt={p.imageAlt ?? ''} loading="lazy" className="aspect-[16/10] w-full object-cover object-top" />
+                  </div>
+                ))}
             </article>
           </Reveal>
         ))}
