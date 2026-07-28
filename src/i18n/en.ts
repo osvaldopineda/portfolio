@@ -6,7 +6,7 @@ const en: LocaleBundle = {
       role: 'Senior Fullstack Engineer · AI-Driven SaaS & Fintech',
       tagline: 'I design and build secure, accessible web platforms — front to back.',
       summary:
-        'Senior Fullstack Engineer with 7 years building secure, accessible web platforms across SaaS and fintech — from banking-grade systems (PCI DSS) to accessibility work on Google Search. Experienced across the React ecosystem (Next.js, TypeScript) and backends (Node.js, Java, Python, GraphQL, gRPC), with a growing focus on delivering with AI (AI-assisted development and AI/LLM integration). I work close to product — owning frontend architecture, weighing cost and scalability trade-offs, and partnering with founders and stakeholders, not just shipping code.',
+        'Senior Fullstack Engineer, 7 years across SaaS and fintech — from banking-grade PCI DSS systems to accessibility on Google Search. I own frontend architecture end to end, deliver with AI-assisted workflows, and partner with founders and stakeholders — not just shipping code.',
       location: 'Mexico City, Mexico · GMT-6',
       availability: 'Open to remote global collaboration, B2B, and relocation / sponsorship.',
     },
@@ -15,8 +15,6 @@ const en: LocaleBundle = {
       { value: 'PCI DSS', label: 'banking-grade fintech' },
       { value: '2.3M+ users', label: 'Stitch Fix' },
       { value: '$1M+/mo', label: 'real-time payments' },
-      { value: '7+ years', label: 'senior engineering' },
-      { value: 'AI-driven', label: 'modern delivery' },
     ],
     experience: [
       {
@@ -89,12 +87,9 @@ const en: LocaleBundle = {
       },
     ],
     skills: [
-      { group: 'Frontend', items: ['React.js', 'Next.js (SSR/ISR)', 'Vite', 'TypeScript', 'JavaScript (ES6+)', 'Redux', 'React Hook Form', 'Tailwind CSS', 'shadcn/ui', 'Storybook', 'Performance Optimization', 'WCAG 2.1/2.2 AA · ARIA'] },
-      { group: 'Backend & APIs', items: ['Node.js', 'Express', 'Java', 'Python', 'FastAPI', 'Django', 'REST', 'GraphQL', 'gRPC', 'WebSockets', 'JWT'] },
-      { group: 'Data & CMS', items: ['PostgreSQL', 'MongoDB', 'Prisma', 'Contentstack', 'RealmDB'] },
-      { group: 'Cloud & Infra', items: ['AWS (EC2, S3, RDS, Lambda)', 'GCP', 'Vercel', 'On-premise/Hybrid', 'Docker'] },
-      { group: 'CI/CD & Version Control', items: ['GitHub', 'GitLab', 'Bitbucket', 'GitHub Actions', 'GitLab CI', 'Jenkins', 'CircleCI'] },
-      { group: 'Testing & Practices', items: ['Jest', 'Cypress', 'React Testing Library', 'Playwright', 'Code Review', 'Agile/Scrum', 'A/B Testing & Feature Flags'] },
+      { group: 'Frontend', items: ['React.js', 'Next.js (SSR/ISR)', 'TypeScript', 'Vite', 'Redux', 'Tailwind CSS', 'shadcn/ui', 'Storybook', 'Performance Optimization', 'WCAG 2.1/2.2 AA · ARIA'] },
+      { group: 'Backend & Data', items: ['Node.js', 'Java', 'Python (FastAPI · Django)', 'REST', 'GraphQL', 'gRPC', 'WebSockets', 'PostgreSQL', 'MongoDB', 'Prisma'] },
+      { group: 'Cloud & Quality', items: ['AWS (EC2, S3, RDS, Lambda)', 'GCP', 'Vercel', 'Docker', 'GitHub Actions CI/CD', 'Jest', 'React Testing Library', 'Playwright', 'A/B Testing & Feature Flags'] },
       { group: 'AI & Agentic', items: ['AI-Assisted Development', 'Multi-Agent Workflows', 'LLM / AI API Integration', 'Prompt Engineering', 'Claude Code · Cursor'] },
     ],
     projects: [
@@ -105,6 +100,17 @@ const en: LocaleBundle = {
         live: 'https://asoiaf-map.pages.dev',
         repo: 'https://github.com/osvaldopineda/asoiaf-map',
         year: '2026',
+        image: '/projects/mundo-conocido.jpg',
+        imageAlt: 'Hand-drawn interactive map of Westeros with clickable regions',
+      },
+      {
+        name: 'Lyra',
+        blurb: 'Your listening history as a navigable 3D galaxy — every artist is a star sized by playtime, genres form constellations wrapped in animated nebulas, fed by Spotify and Last.fm data.',
+        stack: ['Three.js', 'GLSL', 'TypeScript', 'Spotify API', 'Last.fm API'],
+        live: 'https://lyra-313.pages.dev',
+        year: '2026',
+        image: '/projects/lyra.jpg',
+        imageAlt: '3D galaxy where each star is an artist, grouped into glowing genre constellations',
       },
       {
         name: 'FinDash',
@@ -112,6 +118,13 @@ const en: LocaleBundle = {
         stack: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
         live: 'https://findash-icc.pages.dev',
         year: '2026',
+      },
+      {
+        name: 'TripSurprise',
+        blurb: 'Collaborative trip itineraries — a group shares one real-time plan: day-by-day events, map, weather, budget and a document wallet as the source of truth, plus surprise events that reveal over time.',
+        stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
+        year: '2026',
+        status: 'In development — first stop: Japan',
       },
     ],
     education: {

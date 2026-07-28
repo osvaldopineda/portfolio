@@ -22,6 +22,11 @@ export interface Project {
   live?: string
   repo?: string
   year: string
+  /** Screenshot in /public/projects — localized alt lives in imageAlt. */
+  image?: string
+  imageAlt?: string
+  /** Localized state line for projects without public links yet. */
+  status?: string
 }
 
 export interface SkillGroup {
