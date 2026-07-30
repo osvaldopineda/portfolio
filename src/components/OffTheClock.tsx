@@ -12,7 +12,7 @@ export default function OffTheClock() {
         </h2>
       </Reveal>
 
-      <Reveal delay={0.1}>
+      <Reveal>
         <p className="serif mt-6 max-w-2xl text-xl italic leading-relaxed text-ink/90 md:text-2xl">
           {t.body}
         </p>

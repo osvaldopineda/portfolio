@@ -14,8 +14,8 @@ export default function Projects() {
       />
 
       <div className="border-t border-line">
-        {cv.projects.map((p, i) => (
-          <Reveal key={p.name} delay={i * 0.05}>
+        {cv.projects.map((p) => (
+          <Reveal key={p.name}>
             <article className="group grid gap-8 border-b border-line py-12 md:grid-cols-[1fr_minmax(0,420px)] md:items-center">
               <div>
                 <div className="flex items-baseline gap-4">

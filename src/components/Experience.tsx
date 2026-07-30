@@ -13,8 +13,8 @@ export default function Experience() {
       />
 
       <div className="border-t border-line">
-        {cv.experience.map((job, i) => (
-          <Reveal key={job.company} delay={i * 0.04}>
+        {cv.experience.map((job) => (
+          <Reveal key={job.company}>
             <article className="group grid gap-6 border-b border-line py-12 transition-colors md:grid-cols-[240px_1fr]">
               {/* meta */}
               <div>

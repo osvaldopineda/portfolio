@@ -2,12 +2,21 @@
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
+  future: {
+    // Gate every `hover:` utility behind @media (hover: hover) so a tap on
+    // touch doesn't leave hover states stuck on.
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       fontFamily: {
         serif: ['"Fraunces"', 'serif'],
-        sans:  ['"Inter"', 'system-ui', 'sans-serif'],
+        sans:  ['"Geist"', 'system-ui', 'sans-serif'],
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+      transitionTimingFunction: {
+        // Strong ease-out — the stock curves are too weak to read as intentional
+        'out-strong': 'cubic-bezier(0.23, 1, 0.32, 1)',
       },
       colors: {
         // Themed via CSS variables (see index.css :root / .dark)

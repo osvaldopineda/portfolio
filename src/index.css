@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Geist:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -41,9 +41,16 @@
   }
   :focus:not(:focus-visible) { outline: none; }
 
-  /* Editorial display: Instrument Serif tightened */
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
+}
+
+/* Fraunces with SOFT + WONK engaged — softer terminals and the alternate
+   single-storey 'g' / swashed 'y'. Without these axes Fraunces renders in the
+   default shape every AI-built editorial site ships. */
+.serif {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
 }
 
 /* Paper grain — subtle print texture over the whole canvas */
@@ -59,17 +66,18 @@
 }
 .dark .grain::before { mix-blend-mode: screen; opacity: 0.06; }
 
-.serif { font-family: 'Fraunces', serif; }
-
-/* Animated underline for links */
+/* Animated underline for links — gated so a tap on touch doesn't leave it stuck */
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-size 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.link-underline:hover { background-size: 100% 1px; }
+@media (hover: hover) and (pointer: fine) {
+  .link-underline:hover { background-size: 100% 1px; }
+}
+.link-underline:focus-visible { background-size: 100% 1px; }
 
 /* Thin theme-aware scrollbar */
 ::-webkit-scrollbar { width: 10px; }

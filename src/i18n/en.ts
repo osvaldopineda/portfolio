@@ -4,9 +4,9 @@ const en: LocaleBundle = {
   cv: {
     profile: {
       role: 'Senior Fullstack Engineer · AI-Driven SaaS & Fintech',
-      tagline: 'I design and build secure, accessible web platforms — front to back.',
+      tagline: 'I design and build secure, accessible web platforms. Front to back.',
       summary:
-        'Senior Fullstack Engineer, 7 years across SaaS and fintech — from banking-grade PCI DSS systems to accessibility on Google Search. I own frontend architecture end to end, deliver with AI-assisted workflows, and partner with founders and stakeholders — not just shipping code.',
+        'Seven years across SaaS and fintech, from banking-grade PCI DSS systems to accessibility on Google Search. I own frontend architecture end to end and work close to product.',
       location: 'Mexico City, Mexico · GMT-6',
       availability: 'Open to remote global collaboration, B2B, and relocation / sponsorship.',
     },

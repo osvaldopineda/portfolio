@@ -8,6 +8,7 @@ import LanguageToggle from './LanguageToggle'
 export default function Nav() {
   const { ui } = useI18n()
   const [open, setOpen] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
   const links = [
     { href: '#work', label: ui.nav.work },
     { href: '#approach', label: ui.nav.approach },
@@ -23,6 +24,29 @@ export default function Nav() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  // Scroll-spy: the page is ~13k px tall, so "where am I" needs an answer.
+  // IntersectionObserver rather than a scroll listener — no per-frame work.
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.querySelector<HTMLElement>(l.href))
+      .filter((el): el is HTMLElement => el !== null)
+    if (!sections.length) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
+        if (visible) setActive(`#${visible.target.id}`)
+      },
+      // Band just below the fixed header: whatever crosses it is "current".
+      { rootMargin: '-20% 0px -70% 0px' },
+    )
+    sections.forEach((s) => observer.observe(s))
+    return () => observer.disconnect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-md">
       <a
@@ -37,7 +61,16 @@ export default function Nav() {
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="link-underline text-sm text-muted hover:text-ink">
+            <a
+              key={l.href}
+              href={l.href}
+              aria-current={active === l.href ? 'location' : undefined}
+              className={`link-underline text-sm transition-colors duration-200 hover:text-ink ${
+                active === l.href
+                  ? 'text-ink [background-size:100%_1px]'
+                  : 'text-muted'
+              }`}
+            >
               {l.label}
             </a>
           ))}

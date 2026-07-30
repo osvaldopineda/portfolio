@@ -17,7 +17,7 @@ export default function Contact() {
         </h2>
       </Reveal>
 
-      <Reveal delay={0.1}>
+      <Reveal>
         <a
           href={`mailto:${PROFILE.email}`}
           className="link-underline mt-12 inline-block max-w-full break-words serif text-2xl italic sm:text-3xl md:text-4xl"
@@ -40,7 +40,7 @@ export default function Contact() {
       </Reveal>
 
       {/* Education / certs / languages — editorial index */}
-      <Reveal delay={0.16}>
+      <Reveal>
         <dl className="mt-24 grid gap-y-8 border-t border-line pt-10 md:grid-cols-3 md:gap-x-10">
           <div>
             <dt className="serif text-xl text-clay">{t.education}</dt>
