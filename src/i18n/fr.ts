@@ -139,7 +139,7 @@ const fr: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Parcours', approach: 'Approche', skills: 'Compétences', projects: 'Projets', contact: 'Contact', cv: 'CV', skipToContent: 'Aller au contenu', menu: 'Menu' },
+    nav: { work: 'Parcours', approach: 'Approche', skills: 'Compétences', projects: 'Projets', contact: 'Contact', cv: 'CV', skipToContent: 'Aller au contenu', menu: 'Menu', editionAria: 'Changer d\'édition du design. Actuelle :', editionEditorial: 'Éditoriale', editionRiso: 'Impression riso' },
     hero: {
       downloadCv: 'Télécharger le CV',
       getInTouch: 'Me contacter',

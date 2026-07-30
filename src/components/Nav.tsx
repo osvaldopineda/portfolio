@@ -4,6 +4,7 @@ import { PROFILE } from '../data/cv'
 import { useI18n } from '../i18n/context'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggle from './LanguageToggle'
+import EditionToggle from './EditionToggle'
 
 export default function Nav() {
   const { ui } = useI18n()
@@ -79,6 +80,7 @@ export default function Nav() {
           <div className="hidden md:block">
             <LanguageToggle />
           </div>
+          <EditionToggle />
           <ThemeToggle />
           <a
             href={PROFILE.cv}

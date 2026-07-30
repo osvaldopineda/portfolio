@@ -47,11 +47,11 @@ export default function Projects() {
 
               {p.image &&
                 (p.live ? (
-                  <a href={p.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true" className="overflow-hidden rounded-lg border border-line">
+                  <a href={p.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true" className="shot-frame overflow-hidden rounded-lg border border-line">
                     <img src={p.image} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
                   </a>
                 ) : (
-                  <div className="overflow-hidden rounded-lg border border-line">
+                  <div className="shot-frame overflow-hidden rounded-lg border border-line">
                     <img src={p.image} alt={p.imageAlt ?? ''} loading="lazy" className="aspect-[16/10] w-full object-cover object-top" />
                   </div>
                 ))}

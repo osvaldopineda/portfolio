@@ -139,7 +139,7 @@ const en: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu' },
+    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print' },
     hero: {
       downloadCv: 'Download CV',
       getInTouch: 'Get in touch',

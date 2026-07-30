@@ -26,6 +26,29 @@
     --line:   rgba(234,224,213,0.14);
   }
 
+  /* ================= EDICIÓN II — RISO ==================
+     Two-ink risograph system: green ink + fluor pink on
+     uncoated paper. Same layout, different world. */
+  [data-edition='riso'] {
+    --paper:  247 244 236;       /* #F7F4EC uncoated stock */
+    --raised: 251 249 243;       /* #FBF9F3 */
+    --ink:    26 46 39;          /* #1A2E27 deep green ink */
+    --muted:  84 98 89;          /* #546259 — AA on paper */
+    --accent: 14 107 84;         /* #0E6B54 green ink */
+    --clay:   194 42 99;         /* #C22A63 fluor pink (2nd ink) */
+    --line:   rgba(26,46,39,0.16);
+  }
+  [data-edition='riso'].dark {
+    /* riso on dark stock: inks go luminous */
+    --paper:  22 32 28;          /* #16201C */
+    --raised: 30 42 37;          /* #1E2A25 */
+    --ink:    237 232 219;       /* #EDE8DB */
+    --muted:  163 176 166;       /* #A3B0A6 */
+    --accent: 111 205 170;       /* #6FCDAA */
+    --clay:   245 137 177;       /* #F589B1 */
+    --line:   rgba(237,232,219,0.16);
+  }
+
   html { scroll-behavior: smooth; }
   body {
     @apply bg-paper text-ink font-sans antialiased;
@@ -93,6 +116,58 @@
 }
 ::view-transition-old(root) { z-index: 0; }
 ::view-transition-new(root) { z-index: 1; }
+
+/* ================= EDICIÓN II — RISO: treatments =================
+   The edition changes materials, not layout. Print-shop grammar:
+   near-square corners, misregistered second ink, duotone imagery. */
+
+/* Display face: Fraunces is Edición I only. Riso sets display in heavy Geist.
+   The !important neutralises stale inline font-variation axes left by the
+   Edición I cursor effect when switching live. */
+[data-edition='riso'] .serif {
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 800;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.015em;
+}
+
+/* Print never rounds a pill: flatten every rounded control to a 2px kiss. */
+[data-edition='riso'] .rounded-full { border-radius: 2px; }
+[data-edition='riso'] .rounded-lg { border-radius: 2px; }
+
+/* The hero name carries a base misregistration: the pink pass sits 3px off.
+   The cursor effect (VariableName) animates this offset per letter. */
+[data-edition='riso'] h1 span[aria-hidden] {
+  text-shadow: 3px 3px 0 rgb(var(--clay) / 0.5);
+}
+
+/* Second-ink misregistration on primary CTAs (decorative, hover-gated). */
+@media (hover: hover) and (pointer: fine) {
+  [data-edition='riso'] .bg-ink:hover { box-shadow: 4px 4px 0 rgb(var(--clay)); }
+}
+
+/* Project screenshots print in duotone (green ink over paper) and develop
+   to full colour on hover/focus — unifies apps that share no palette. */
+[data-edition='riso'] .shot-frame { background: rgb(var(--accent)); }
+[data-edition='riso'] .shot-frame img {
+  /* brightness lifts dark UIs before the multiply so they read as ink on
+     paper instead of collapsing to black */
+  filter: grayscale(1) brightness(1.45) contrast(1.08);
+  mix-blend-mode: multiply;
+  transition: filter 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+[data-edition='riso'] .shot-frame:hover img,
+[data-edition='riso'] .shot-frame:focus-within img {
+  filter: none;
+  mix-blend-mode: normal;
+}
+[data-edition='riso'].dark .shot-frame img { mix-blend-mode: screen; }
+[data-edition='riso'].dark .shot-frame:hover img,
+[data-edition='riso'].dark .shot-frame:focus-within img { mix-blend-mode: normal; }
+
+/* Riso paper grain: coarser, like real riso toner */
+[data-edition='riso'] .grain::before { opacity: 0.55; }
+[data-edition='riso'].dark .grain::before { opacity: 0.09; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

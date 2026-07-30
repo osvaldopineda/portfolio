@@ -139,7 +139,7 @@ const es: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Experiencia', approach: 'Enfoque', skills: 'Skills', projects: 'Proyectos', contact: 'Contacto', cv: 'CV', skipToContent: 'Saltar al contenido', menu: 'Menú' },
+    nav: { work: 'Experiencia', approach: 'Enfoque', skills: 'Skills', projects: 'Proyectos', contact: 'Contacto', cv: 'CV', skipToContent: 'Saltar al contenido', menu: 'Menú', editionAria: 'Cambiar edición de diseño. Actual:', editionEditorial: 'Editorial', editionRiso: 'Impresión riso' },
     hero: {
       downloadCv: 'Descargar CV',
       getInTouch: 'Contáctame',

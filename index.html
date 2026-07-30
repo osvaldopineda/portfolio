@@ -32,6 +32,30 @@
           if (dark) document.documentElement.classList.add('dark');
         } catch (e) {}
       })();
+      // Apply design edition before paint. Rules: explicit choice wins;
+      // otherwise the edition is pinned per session and rotates between
+      // visits; a first-ever visit always lands on Editorial.
+      (function () {
+        var e = 'editorial';
+        try {
+          var E = ['editorial', 'riso'];
+          var chosen = localStorage.getItem('edition-chosen');
+          if (chosen && E.indexOf(chosen) > -1) {
+            e = chosen;
+          } else {
+            var s = sessionStorage.getItem('edition-session');
+            if (s && E.indexOf(s) > -1) {
+              e = s;
+            } else {
+              var last = localStorage.getItem('edition-last');
+              e = last && E.indexOf(last) > -1 ? E[(E.indexOf(last) + 1) % E.length] : 'editorial';
+              localStorage.setItem('edition-last', e);
+              sessionStorage.setItem('edition-session', e);
+            }
+          }
+        } catch (x) {}
+        document.documentElement.dataset.edition = e;
+      })();
     </script>
   </head>
   <body>
