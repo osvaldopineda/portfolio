@@ -118,6 +118,8 @@ const es: LocaleBundle = {
         stack: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
         live: 'https://findash-icc.pages.dev',
         year: '2026',
+        image: '/projects/findash.jpg',
+        imageAlt: 'Dos pantallas de teléfono: dashboard de ahorro en verde con proyecciones mensuales, y desglose de gastos por categoría',
       },
       {
         name: 'TripSurprise',
@@ -125,6 +127,8 @@ const es: LocaleBundle = {
         stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
         year: '2026',
         status: 'En desarrollo — primera parada: Japón',
+        image: '/projects/tripsurprise.jpg',
+        imageAlt: 'Dos pantallas de teléfono de un viaje a Japón: itinerario por día con cuenta regresiva y reloj dual, y presupuesto en dos monedas',
       },
     ],
     education: {
