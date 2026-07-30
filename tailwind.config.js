@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Fraunces"', 'serif'],
-        sans:  ['"Geist"', 'system-ui', 'sans-serif'],
+        serif: ['"Newsreader"', 'serif'],
+        sans:  ['"Archivo"', 'system-ui', 'sans-serif'],
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       transitionTimingFunction: {
@@ -34,15 +34,6 @@ export default {
       },
       letterSpacing: {
         tight2: '-0.03em',
-      },
-      keyframes: {
-        marquee: {
-          from: { transform: 'translateX(0)' },
-          to:   { transform: 'translateX(-50%)' },
-        },
-      },
-      animation: {
-        marquee: 'marquee 38s linear infinite',
       },
     },
   },

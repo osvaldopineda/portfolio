@@ -35,8 +35,9 @@ export default function VariableName({ text, className }: { text: string; classN
             l.style.textShadow = `${off}px ${off}px 0 rgb(var(--clay) / 0.5)`
             l.style.fontVariationSettings = ''
           } else {
-            const wght = Math.round(400 + t * 500)
-            const opsz = Math.round(28 + t * 116)
+            // Newsreader axes: opsz 6..72, wght 200..800
+            const wght = Math.round(400 + t * 350)
+            const opsz = Math.round(18 + t * 54)
             l.style.fontVariationSettings = `'opsz' ${opsz}, 'wght' ${wght}`
             l.style.textShadow = ''
           }
@@ -51,7 +52,7 @@ export default function VariableName({ text, className }: { text: string; classN
           l.style.textShadow = ''
           l.style.fontVariationSettings = ''
         } else {
-          l.style.fontVariationSettings = "'opsz' 144, 'wght' 400"
+          l.style.fontVariationSettings = "'opsz' 72, 'wght' 400"
           l.style.textShadow = ''
         }
       }
@@ -77,7 +78,7 @@ export default function VariableName({ text, className }: { text: string; classN
           }}
           aria-hidden="true"
           className="inline-block will-change-[font-variation-settings]"
-          style={{ fontVariationSettings: "'opsz' 144, 'wght' 400", transition: 'font-variation-settings 0.18s ease-out' }}
+          style={{ fontVariationSettings: "'opsz' 72, 'wght' 400", transition: 'font-variation-settings 0.18s ease-out' }}
         >
           {ch}
         </span>

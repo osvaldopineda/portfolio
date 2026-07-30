@@ -20,10 +20,10 @@ const en: LocaleBundle = {
       {
         company: 'Google (via Qualitest)',
         role: 'Senior Software Engineer',
-        period: 'Sep 2025 — Mar 2026',
+        period: 'Sep 2025 - Mar 2026',
         highlights: [
           'Resolved 50+ high-priority Web Accessibility (WCAG 2.1/2.2 AA, ARIA) defects directly on Google Search, improving compliance and inclusivity for one of the world’s highest-traffic products.',
-          'Ran accessibility audits and shipped UI remediations through large-scale code review, partnering with product and design teams — accelerating delivery with AI coding assistants and AI-assisted test generation.',
+          'Ran accessibility audits and shipped UI remediations through large-scale code review, partnering with product and design teams, accelerating delivery with AI coding assistants and AI-assisted test generation.',
           'Built backend service communication in Java with gRPC, integrating frontend components into Google’s proprietary internal infrastructure.',
         ],
         stack: ['Accessibility (WCAG/ARIA)', 'Java', 'gRPC', 'React', 'Code Review'],
@@ -31,11 +31,11 @@ const en: LocaleBundle = {
       {
         company: 'Pandora’s Way',
         role: 'Frontend Lead',
-        period: 'Feb 2025 — Dec 2025',
+        period: 'Feb 2025 - Dec 2025',
         context: 'Part-time · early-stage startup beta',
         highlights: [
-          'Sole frontend owner for the investor-facing beta of a parenting app — partnered directly with the 3 founders, turned wireframes into a shipped product, and drove architecture, cost, scalability and bundle-size decisions under tight startup constraints.',
-          'Built core user flows and a scalable UI component system with React, Vite, Node.js, Tailwind CSS and shadcn/ui — cut initial bundle size ~70% via lazy loading, code splitting and a Vite-based build.',
+          'Sole frontend owner for the investor-facing beta of a parenting app. Partnered directly with the 3 founders, turned wireframes into a shipped product, and drove architecture, cost, scalability and bundle-size decisions under tight startup constraints.',
+          'Built core user flows and a scalable UI component system with React, Vite, Node.js, Tailwind CSS and shadcn/ui, cutting initial bundle size ~70% via lazy loading, code splitting and a Vite-based build.',
           'Contributed to the Python/Django backend (storage/bucket layer) and helped shape business rules alongside the technical founder.',
           'Integrated PostHog (feature flags + analytics), set up Jest/Cypress testing and CI/CD, and worked hands-on with product in an agile team.',
         ],
@@ -44,29 +44,29 @@ const en: LocaleBundle = {
       {
         company: 'Unosquare',
         role: 'Senior Frontend Engineer',
-        period: 'Jun 2024 — Aug 2025',
+        period: 'Jun 2024 - Aug 2025',
         context: 'Enterprise clients: Stitch Fix · Life.Church',
         highlights: [
-          'Stitch Fix (2.3M+ active clients): led the frontend refactor with GraphQL and migrated content architecture to Contentstack (Headless CMS) — +25% user engagement.',
+          'Stitch Fix (2.3M+ active clients): led the frontend refactor with GraphQL and migrated content architecture to Contentstack (Headless CMS), driving a 25% lift in user engagement.',
           'Life.Church: directed a full frontend redesign in Tailwind CSS and shadcn/ui, building a 20+ component library documented in Storybook and shipped via Vercel.',
-          'Ran data-driven A/B testing (Amplitude) for +15% conversion, optimized rendering performance on high-traffic Next.js apps, and held 85%+ coverage with Jest, React Testing Library and Playwright — accelerated by AI-assisted development.',
+          'Ran data-driven A/B testing (Amplitude) for +15% conversion, optimized rendering performance on high-traffic Next.js apps, and held 85%+ coverage with Jest, React Testing Library and Playwright, accelerated by AI-assisted development.',
         ],
         stack: ['Next.js', 'GraphQL', 'Contentstack', 'shadcn/ui', 'Storybook'],
       },
       {
         company: 'Invex Bank & Compartamos Bank',
         role: 'Senior Fintech Consultant',
-        period: 'May 2023 — May 2024',
+        period: 'May 2023 - May 2024',
         highlights: [
-          'Invex Bank: led a legacy migration to micro-frontends serving 50k+ customers — 15+ React/TypeScript widgets with strict PCI DSS compliance and secure Node.js + PostgreSQL + JWT APIs on the bank’s on-premise/hybrid infrastructure.',
-          'Compartamos Banco (one of LatAm’s largest microfinance banks — 3.1M+ clients): engineered an offline-first financial-inclusion platform (React Native + encrypted RealmDB) with high-concurrency Java backends in hexagonal architecture, containerized with Docker.',
+          'Invex Bank: led a legacy migration to micro-frontends serving 50k+ customers: 15+ React/TypeScript widgets with strict PCI DSS compliance and secure Node.js + PostgreSQL + JWT APIs on the bank’s on-premise/hybrid infrastructure.',
+          'Compartamos Banco (one of LatAm’s largest microfinance banks, 3.1M+ clients): engineered an offline-first financial-inclusion platform (React Native + encrypted RealmDB) with high-concurrency Java backends in hexagonal architecture, containerized with Docker.',
         ],
         stack: ['Micro-frontends', 'PCI DSS', 'Java', 'React Native', 'Docker'],
       },
       {
         company: 'Fondeadora for Business',
         role: 'Frontend Tech Lead',
-        period: 'May 2021 — May 2023',
+        period: 'May 2021 - May 2023',
         highlights: [
           'Engineered a B2B fintech platform from the ground up with React & Redux, scaling to 5k+ business customers.',
           'Built a comprehensive 8-module admin panel (React Hook Form) with RBAC auth, transaction history and digital card management.',
@@ -78,7 +78,7 @@ const en: LocaleBundle = {
       {
         company: 'ProsperIA',
         role: 'Frontend Developer',
-        period: 'Feb 2019 — May 2021',
+        period: 'Feb 2019 - May 2021',
         highlights: [
           'Designed and built an AI-powered medical MVP (React + Python) to support ophthalmologist diagnosis workflows.',
           'Integrated AI APIs processing 1GB+ of medical imagery, improving pipeline performance and scalability by 50%.',
@@ -95,7 +95,7 @@ const en: LocaleBundle = {
     projects: [
       {
         name: 'El Mundo Conocido',
-        blurb: 'Immersive interactive map of Westeros — clickable regions with deep lore, a historical-era timeline, hand-drawn cartography, and procedural ambient sound.',
+        blurb: 'Immersive interactive map of Westeros: clickable regions with deep lore, a historical-era timeline, hand-drawn cartography, and procedural ambient sound.',
         stack: ['React', 'Leaflet', 'anime.js', 'Web Audio API', 'Zustand'],
         live: 'https://asoiaf-map.pages.dev',
         repo: 'https://github.com/osvaldopineda/asoiaf-map',
@@ -105,7 +105,7 @@ const en: LocaleBundle = {
       },
       {
         name: 'Lyra',
-        blurb: 'Your listening history as a navigable 3D galaxy — every artist is a star sized by playtime, genres form constellations wrapped in animated nebulas, fed by Spotify and Last.fm data.',
+        blurb: 'Your listening history as a navigable 3D galaxy: every artist is a star sized by playtime, genres form constellations wrapped in animated nebulas, fed by Spotify and Last.fm data.',
         stack: ['Three.js', 'GLSL', 'TypeScript', 'Spotify API', 'Last.fm API'],
         live: 'https://lyra-313.pages.dev',
         year: '2026',
@@ -114,7 +114,7 @@ const en: LocaleBundle = {
       },
       {
         name: 'FinDash',
-        blurb: 'Mobile-first personal finance dashboard — real-time projections, freelance income targets and Supabase sync, built to survive a career transition.',
+        blurb: 'Mobile-first personal finance dashboard: real-time projections, freelance income targets and Supabase sync, built to survive a career transition.',
         stack: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
         live: 'https://findash-icc.pages.dev',
         year: '2026',
@@ -123,10 +123,10 @@ const en: LocaleBundle = {
       },
       {
         name: 'TripSurprise',
-        blurb: 'Collaborative trip itineraries — a group shares one real-time plan: day-by-day events, map, weather, budget and a document wallet as the source of truth, plus surprise events that reveal over time.',
+        blurb: 'Collaborative trip itineraries: a group shares one real-time plan with day-by-day events, map, weather, budget and a document wallet as the source of truth, plus surprise events that reveal over time.',
         stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
         year: '2026',
-        status: 'In development — first stop: Japan',
+        status: 'In development. First stop: Japan',
         image: '/projects/tripsurprise.jpg',
         imageAlt: 'Two phone screens of a Japan trip plan: day-by-day itinerary with countdown and dual clocks, and a two-currency budget breakdown',
       },
@@ -134,42 +134,41 @@ const en: LocaleBundle = {
     education: {
       degree: "Bachelor's in Computer Engineering",
       school: 'Universidad de América del Norte',
-      certs: ['React Advanced Patterns', 'Node.js Application Security', 'UX/UI Design — DEV.F'],
-      languages: ['Spanish — Native', 'English — C1 Professional'],
+      certs: ['React Advanced Patterns', 'Node.js Application Security', 'UX/UI Design (DEV.F)'],
+      languages: ['Spanish, native', 'English, C1 professional'],
     },
   },
   ui: {
-    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print' },
+    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print', editionHint: 'Switch the design here' },
     hero: {
       downloadCv: 'Download CV',
       getInTouch: 'Get in touch',
-      scroll: 'Seven years, scrolled',
       githubAria: 'GitHub',
       linkedinAria: 'LinkedIn',
     },
     experience: {
       title: { pre: 'Seven years, ', accent: 'shipped to production.' },
-      lead: 'From Google Search accessibility to secure fintech platforms — a track record of dependable, performant, inclusive systems.',
+      lead: 'From Google Search accessibility to secure fintech platforms: a track record of dependable, performant, inclusive systems.',
     },
     approach: {
       title: { pre: 'Things I’ll defend in a ', accent: 'code review.' },
-      lead: 'Opinions I’ve earned the hard way — and will argue for in a PR.',
+      lead: 'Opinions I’ve earned the hard way, and will argue for in a PR.',
       opinions: [
         {
           claim: 'I review code for the next human, not the compiler.',
-          body: 'A PR nobody can read is a problem you’re shipping to your teammates — dev-first means we hand each other tools, not trip each other up. And no: don’t let the AI write the whole thing and send it to me unread. Name things like someone has to live with them.',
+          body: 'A PR nobody can read is a problem you’re shipping to your teammates. Dev-first means we hand each other tools, not trip each other up. And no: don’t let the AI write the whole thing and send it to me unread. Name things like someone has to live with them.',
         },
         {
-          claim: 'Accessibility is the work nobody sees — until they need it.',
+          claim: 'Accessibility is the work nobody sees, until they need it.',
           body: 'Color-blind users, screen readers, keyboard-only navigation: it lives behind the product. You don’t notice it’s there. You very much notice when it isn’t. I learned that fixing 50+ a11y defects on Google Search.',
         },
         {
           claim: 'Test the core, not the cosmetics.',
-          body: 'The happy path and the edge cases that actually matter — that’s where tests earn their keep. Everything else is building fake walls to feel safe.',
+          body: 'The happy path and the edge cases that actually matter: that’s where tests earn their keep. Everything else is building fake walls to feel safe.',
         },
         {
           claim: 'AI is Robin. I’m still Batman.',
-          body: 'A copilot, not an equal: it drafts fast and never tires, but the final call — and the responsibility — are mine. Robin’s sharp; Batman still decides.',
+          body: 'A copilot, not an equal: it drafts fast and never tires, but the final call (and the responsibility) are mine. Robin’s sharp; Batman still decides.',
         },
         {
           claim: 'Know which battles to fight in-house.',
@@ -180,16 +179,16 @@ const en: LocaleBundle = {
     skills: { title: { pre: 'The ', accent: 'toolkit.' } },
     projects: {
       title: { pre: 'Things I build ', accent: 'for the craft.' },
-      lead: 'Side projects where I get to own the whole stack — design, engineering and the details in between.',
+      lead: 'Side projects where I get to own the whole stack: design, engineering and the details in between.',
       liveDemo: 'Live demo',
       code: 'Code',
     },
     offclock: {
       title: { pre: 'Off the ', accent: 'clock.' },
-      body: 'When I’m not shipping, I’m probably playing guitar, bass or drums — raised on The Strokes and Arctic Monkeys, loud enough to annoy the neighbors. I over-engineer side projects to learn one new thing (that Westeros map up there started exactly like that), and recharge with a good beer and better company — my family.',
+      body: 'When I’m not shipping, I’m probably playing guitar, bass or drums, raised on The Strokes and Arctic Monkeys, loud enough to annoy the neighbors. I over-engineer side projects to learn one new thing (that Westeros map up there started exactly like that), and recharge with a good beer and better company: my family.',
     },
     contact: {
-      statusLine: 'Currently building from Mexico City — open to remote & relocation',
+      statusLine: 'Currently building from Mexico City, open to remote & relocation',
       titleLine1: 'Let’s build something',
       titleLine2Pre: 'that ',
       titleAccent: 'lasts.',
@@ -197,7 +196,7 @@ const en: LocaleBundle = {
       education: 'Education',
       certifications: 'Certifications',
       languages: 'Languages',
-      footerSetIn: 'Set in Fraunces · React · Vite · Tailwind',
+      footerSetIn: 'Set in Newsreader & Archivo · React · Vite · Tailwind',
     },
   },
 }

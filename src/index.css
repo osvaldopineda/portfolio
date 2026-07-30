@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Geist:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -68,12 +68,11 @@
   p { text-wrap: pretty; }
 }
 
-/* Fraunces with SOFT + WONK engaged — softer terminals and the alternate
-   single-storey 'g' / swashed 'y'. Without these axes Fraunces renders in the
-   default shape every AI-built editorial site ships. */
+/* Newsreader: editorial voice with real italics and a live optical-size axis.
+   Chose over Fraunces/Instrument Serif deliberately — both are the canonical
+   AI-default display serifs and read as generated. */
 .serif {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  font-family: 'Newsreader', serif;
 }
 
 /* Paper grain — subtle print texture over the whole canvas */
@@ -125,10 +124,11 @@
    The !important neutralises stale inline font-variation axes left by the
    Edición I cursor effect when switching live. */
 [data-edition='riso'] .serif {
-  font-family: 'Geist', system-ui, sans-serif;
+  /* expanded black Archivo — print-poster display; the wdth axis is the point */
+  font-family: 'Archivo', system-ui, sans-serif;
   font-weight: 800;
-  font-variation-settings: normal !important;
-  letter-spacing: -0.015em;
+  font-variation-settings: 'wdth' 120 !important;
+  letter-spacing: -0.01em;
 }
 
 /* Print never rounds a pill: flatten every rounded control to a 2px kiss. */
@@ -171,5 +171,4 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-marquee { animation: none !important; }
 }

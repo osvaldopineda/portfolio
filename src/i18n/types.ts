@@ -71,11 +71,10 @@ export interface Opinion {
 }
 
 export interface UIStrings {
-  nav: { work: string; approach: string; skills: string; projects: string; contact: string; cv: string; skipToContent: string; menu: string; editionAria: string; editionEditorial: string; editionRiso: string }
+  nav: { work: string; approach: string; skills: string; projects: string; contact: string; cv: string; skipToContent: string; menu: string; editionAria: string; editionEditorial: string; editionRiso: string; editionHint: string }
   hero: {
     downloadCv: string
     getInTouch: string
-    scroll: string
     githubAria: string
     linkedinAria: string
   }
