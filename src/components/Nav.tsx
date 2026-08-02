@@ -11,6 +11,7 @@ export default function Nav() {
   const { ui } = useI18n()
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const links = [
     { href: '#work', label: ui.nav.work },
     { href: '#approach', label: ui.nav.approach },
@@ -25,6 +26,15 @@ export default function Nav() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
+
+  // Scroll-edge hairline: no divider while the bar sits on untouched paper,
+  // fade it in once content actually scrolls underneath (apple-design audit).
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Scroll-spy: the page is ~13k px tall, so "where am I" needs an answer.
   // IntersectionObserver rather than a scroll listener — no per-frame work.
@@ -50,7 +60,7 @@ export default function Nav() {
   }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-md">
+    <header className={`fixed inset-x-0 top-0 z-40 border-b bg-paper/80 backdrop-blur-md transition-colors duration-300 ${scrolled || open ? 'border-line' : 'border-transparent'}`}>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-paper"

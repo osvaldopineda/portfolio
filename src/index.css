@@ -221,24 +221,9 @@ body .driver-popover .driver-popover-arrow-side-right { border-right-color: rgb(
   [data-edition='riso'] .bg-ink:hover { box-shadow: 4px 4px 0 rgb(var(--clay)); }
 }
 
-/* Project screenshots print in duotone (green ink over paper) and develop
-   to full colour on hover/focus — unifies apps that share no palette. */
-[data-edition='riso'] .shot-frame { background: rgb(var(--accent)); }
-[data-edition='riso'] .shot-frame img {
-  /* brightness lifts dark UIs before the multiply so they read as ink on
-     paper instead of collapsing to black */
-  filter: grayscale(1) brightness(1.45) contrast(1.08);
-  mix-blend-mode: multiply;
-  transition: filter 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-}
-[data-edition='riso'] .shot-frame:hover img,
-[data-edition='riso'] .shot-frame:focus-within img {
-  filter: none;
-  mix-blend-mode: normal;
-}
-[data-edition='riso'].dark .shot-frame img { mix-blend-mode: screen; }
-[data-edition='riso'].dark .shot-frame:hover img,
-[data-edition='riso'].dark .shot-frame:focus-within img { mix-blend-mode: normal; }
+/* Project screenshots show natural in Riso too (the duotone filter was
+   retired 2026-08-02 by request — screenshots ARE the proof of work; the
+   mats and misregistration carry the edition instead). */
 
 /* Riso paper grain: coarser, like real riso toner */
 [data-edition='riso'] .grain::before { opacity: 0.55; }
@@ -246,4 +231,9 @@ body .driver-popover .driver-popover-arrow-side-right { border-right-color: rgb(
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* Reduced transparency: the nav goes solid instead of frosted (apple-design) */
+@media (prefers-reduced-transparency: reduce) {
+  header { background: rgb(var(--paper)) !important; backdrop-filter: none !important; }
 }
