@@ -2,16 +2,16 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { PROFILE } from '../data/cv'
 import { useI18n } from '../i18n/context'
+import TourButton from './TourButton'
 import VariableName from './VariableName'
 
 // Strong ease-out — the stock cubic settles too gently to read as deliberate
 const EASE = [0.23, 1, 0.32, 1] as const
 
 /**
- * Hero entrance. `MotionConfig reducedMotion="user"` does NOT cover this:
- * framer-motion only neutralises transform and layout animations, so opacity
- * and filter still run. The reduced variant drops the blur and shortens the
- * fade rather than removing it — gentler, not nothing.
+ * Hero entrance: rise, no filter (blur audited out 2026-08-02 with Reveal's).
+ * `MotionConfig reducedMotion="user"` does NOT cover opacity, so the reduced
+ * variant still shortens the fade explicitly — gentler, not nothing.
  */
 const useRise = () => {
   const reduce = useReducedMotion()
@@ -23,8 +23,8 @@ const useRise = () => {
           transition: { duration: 0.2, ease: 'linear' as const, delay: 0 },
         }
       : {
-          initial: { opacity: 0, filter: 'blur(4px)' },
-          animate: { opacity: 1, filter: 'blur(0px)' },
+          initial: { opacity: 0, y: 14 },
+          animate: { opacity: 1, y: 0 },
           transition: { duration: 0.5, ease: EASE, delay },
         }
 }
@@ -77,6 +77,7 @@ export default function Hero() {
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
+            <TourButton />
           </motion.div>
         </div>
       </div>

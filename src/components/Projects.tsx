@@ -130,17 +130,19 @@ function Rail({ projects, liveDemo, code }: { projects: Project[]; liveDemo: str
   return (
     <div ref={sectionRef} style={{ height: `${projects.length * 85 + 60}vh` }}>
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-        <motion.div ref={trackRef} style={{ x }} className="flex w-max items-stretch gap-[5vw] px-[10vw]">
+        {/* Card width is capped so mat + caption always fit inside 100vh —
+            at 62vw the mats clipped off the top of the viewport. */}
+        <motion.div ref={trackRef} style={{ x }} className="flex w-max items-center gap-[5vw] px-[10vw]">
           {projects.map((p, i) => (
-            <article key={p.name} className="group w-[62vw] max-w-[820px] shrink-0" onFocus={() => focusCard(i)}>
+            <article key={p.name} className="group w-[46vw] max-w-[620px] shrink-0" onFocus={() => focusCard(i)}>
               <Shot p={p} />
-              <div className="mt-6 flex items-baseline gap-4">
-                <h3 className="serif text-3xl leading-none transition-colors group-hover:text-clay md:text-4xl">{p.name}</h3>
+              <div className="mt-5 flex items-baseline gap-4">
+                <h3 className="serif text-2xl leading-none transition-colors group-hover:text-clay md:text-3xl">{p.name}</h3>
                 <span className="font-mono text-xs text-muted">{p.year}</span>
               </div>
-              <p className="mt-3 max-w-xl leading-relaxed text-muted">{p.blurb}</p>
-              <p className="mt-3 font-mono text-xs text-muted">{p.stack.join(' · ')}</p>
-              <div className="mt-4">
+              <p className="mt-2.5 max-w-xl text-[0.95rem] leading-relaxed text-muted">{p.blurb}</p>
+              <p className="mt-2.5 font-mono text-xs text-muted">{p.stack.join(' · ')}</p>
+              <div className="mt-3">
                 <Links p={p} liveDemo={liveDemo} code={code} />
               </div>
             </article>

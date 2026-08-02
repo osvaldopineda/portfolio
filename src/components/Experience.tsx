@@ -20,18 +20,38 @@ export default function Experience() {
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{job.period}</p>
               <div className="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-1">
                 <h3 className="serif text-3xl leading-tight transition-colors group-hover:text-clay">
-                  {job.company}
+                  {job.url ? (
+                    <a href={job.url} target="_blank" rel="noreferrer" className="link-underline">
+                      {job.company}
+                    </a>
+                  ) : (
+                    job.company
+                  )}
                 </h3>
                 <p className="text-base font-semibold">{job.role}</p>
               </div>
-              {job.context && <p className="mt-1 text-sm text-muted">{job.context}</p>}
+              {(job.context || job.clients) && (
+                <p className="mt-1 text-sm text-muted">
+                  {job.context}
+                  {job.context && job.clients && ': '}
+                  {job.clients?.map((c, k) => (
+                    <span key={c.name}>
+                      {k > 0 && ' · '}
+                      <a href={c.url} target="_blank" rel="noreferrer" className="link-underline text-ink/90">
+                        {c.name}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
 
-              {/* Hanging ticks echo the timeline's marker — structure without
-                  the template dot-bullet or the wall-of-paragraphs. */}
-              <ul className="mt-5 max-w-3xl space-y-4">
+              {/* Register-mark markers (small squares) — a different glyph from
+                  the timeline's tick so the two levels don't repeat, but still
+                  a marker so three highlights don't read as one long paragraph. */}
+              <ul className="mt-5 max-w-2xl space-y-4">
                 {job.highlights.map((h, j) => (
-                  <li key={j} className="relative pl-6 leading-relaxed text-muted">
-                    <span aria-hidden="true" className="absolute left-0 top-[0.72em] h-px w-3.5 bg-clay/70" />
+                  <li key={j} className="relative pl-5 leading-relaxed text-muted">
+                    <span aria-hidden="true" className="absolute left-0 top-[0.62em] h-1 w-1 bg-clay/80" />
                     {h}
                   </li>
                 ))}

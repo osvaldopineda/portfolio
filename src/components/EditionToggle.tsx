@@ -79,6 +79,7 @@ export default function EditionToggle() {
         </span>
       )}
       <button
+        id="edition-toggle"
         ref={btnRef}
         onClick={toggle}
         aria-label={`${ui.nav.editionAria} ${names[edition]}`}

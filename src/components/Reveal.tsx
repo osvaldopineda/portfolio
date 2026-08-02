@@ -5,12 +5,15 @@ import type { ReactNode } from 'react'
 const EASE = [0.23, 1, 0.32, 1] as const
 
 /**
- * Entrance reveal: content eases into focus (blur → sharp) instead of the
- * generic fade-up preset — no directional movement, reads as intentional.
+ * Entrance reveal: a short rise (opacity + 10px of travel), no filter.
+ * The previous blur-in was audited out (2026-08-02): animating `filter` on
+ * every section is expensive (especially Safari), Emil's guidance reserves
+ * blur for masking micro-transitions, and the blur-in reveal itself became
+ * an AI-era signature.
  *
  * No per-index delay: these wrap tall rows that cross the viewport one at a
  * time, so a stagger delay never produces a stagger, only latency.
- * Under prefers-reduced-motion the blur is dropped and only a short fade
+ * Under prefers-reduced-motion the travel is dropped and only a short fade
  * remains — reduced motion means gentler, not nothing.
  */
 export default function Reveal({
@@ -39,10 +42,10 @@ export default function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, filter: 'blur(3px)' }}
-      whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-90px' }}
-      transition={{ duration: 0.45, ease: EASE }}
+      transition={{ duration: 0.35, ease: EASE }}
     >
       {children}
     </motion.div>

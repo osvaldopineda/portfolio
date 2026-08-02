@@ -3,9 +3,13 @@ export const LOCALES: Locale[] = ['en', 'es', 'fr']
 
 export interface Job {
   company: string
+  /** Company website — only set when verified; the company name becomes a link. */
+  url?: string
   role: string
   period: string
   context?: string
+  /** Named clients/brands worked for under this employer, linked when verified. */
+  clients?: { name: string; url: string }[]
   highlights: string[]
   stack: string[]
 }
@@ -77,6 +81,20 @@ export interface UIStrings {
   skills: { title: Heading }
   projects: { title: Heading; lead: string; liveDemo: string; code: string }
   offclock: { title: Heading; body: string }
+  tour: {
+    start: string
+    next: string
+    prev: string
+    done: string
+    workTitle: string
+    workBody: string
+    approachTitle: string
+    approachBody: string
+    projectsTitle: string
+    projectsBody: string
+    editionTitle: string
+    editionBody: string
+  }
   contact: {
     statusLine: string
     titleLine1: string

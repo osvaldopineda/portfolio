@@ -13,6 +13,7 @@ const es: LocaleBundle = {
     experience: [
       {
         company: 'Google (via Qualitest)',
+        url: 'https://www.qualitestgroup.com',
         role: 'Ingeniero de Software Senior',
         period: 'sep 2025 - mar 2026',
         highlights: [
@@ -24,7 +25,8 @@ const es: LocaleBundle = {
       },
       {
         company: 'Pandora’s Way',
-        role: 'Líder de Frontend',
+        url: 'https://pandorasway.com',
+        role: 'Líder de Frontend / Desarrollador Fullstack',
         period: 'feb 2025 - dic 2025',
         context: 'Medio tiempo · beta de startup en etapa temprana',
         highlights: [
@@ -37,9 +39,14 @@ const es: LocaleBundle = {
       },
       {
         company: 'Unosquare',
+        url: 'https://www.unosquare.com',
         role: 'Ingeniero de Frontend Senior',
         period: 'jun 2024 - ago 2025',
-        context: 'Clientes enterprise: Stitch Fix · Life.Church',
+        context: 'Clientes enterprise',
+        clients: [
+          { name: 'Stitch Fix', url: 'https://www.stitchfix.com' },
+          { name: 'Life.Church', url: 'https://www.life.church' },
+        ],
         highlights: [
           'Stitch Fix (2.3M+ clientes activos): lideré el refactor del frontend con GraphQL y migré la arquitectura de contenido a Contentstack (Headless CMS), logrando un 25% más de engagement de usuarios.',
           'Life.Church: dirigí un rediseño completo del frontend en Tailwind CSS y shadcn/ui, construyendo una librería de 20+ componentes documentada en Storybook y entregada vía Vercel.',
@@ -51,6 +58,10 @@ const es: LocaleBundle = {
         company: 'Invex Bank & Compartamos Bank',
         role: 'Consultor Fintech Senior',
         period: 'may 2023 - may 2024',
+        clients: [
+          { name: 'Invex', url: 'https://www.invex.com' },
+          { name: 'Compartamos Banco', url: 'https://www.compartamos.com.mx' },
+        ],
         highlights: [
           'Invex Bank: lideré una migración de legacy a micro-frontends atendiendo a 50k+ clientes: 15+ widgets en React/TypeScript con estricto cumplimiento PCI DSS y APIs seguras en Node.js + PostgreSQL + JWT sobre la infraestructura on-premise/híbrida del banco.',
           'Compartamos Banco (uno de los bancos de microfinanzas más grandes de Latinoamérica, con 3.1M+ clientes): construí una plataforma de inclusión financiera offline-first (React Native + RealmDB cifrado) con backends en Java de alta concurrencia en arquitectura hexagonal, contenerizados con Docker.',
@@ -59,6 +70,7 @@ const es: LocaleBundle = {
       },
       {
         company: 'Fondeadora for Business',
+        url: 'https://fondeadora.com',
         role: 'Tech Lead de Frontend',
         period: 'may 2021 - may 2023',
         highlights: [
@@ -71,6 +83,7 @@ const es: LocaleBundle = {
       },
       {
         company: 'ProsperIA',
+        url: 'https://prosperia.ai',
         role: 'Desarrollador de Frontend',
         period: 'feb 2019 - may 2021',
         highlights: [
@@ -88,14 +101,13 @@ const es: LocaleBundle = {
     ],
     projects: [
       {
-        name: 'El Mundo Conocido',
-        blurb: 'Mapa interactivo e inmersivo de Poniente: regiones clicables con lore profundo, una línea de tiempo de eras históricas, cartografía dibujada a mano y sonido ambiental procedural.',
-        stack: ['React', 'Leaflet', 'anime.js', 'Web Audio API', 'Zustand'],
-        live: 'https://asoiaf-map.pages.dev',
-        repo: 'https://github.com/osvaldopineda/asoiaf-map',
+        name: 'La Casa',
+        blurb: 'La arquitectura emocional de Luis Barragán reconstruida en CSS: muros de color, luz que sigue tu reloj local (la ventana ámbar se enciende de noche) y HTML semántico como cimientos.',
+        stack: ['TypeScript', 'Vite', 'CSS custom properties', 'HTML semántico'],
+        repo: 'https://github.com/osvaldopineda/la-casa',
         year: '2026',
-        image: '/projects/mundo-conocido.jpg',
-        imageAlt: 'Mapa interactivo de Poniente dibujado a mano con regiones clicables',
+        image: '/projects/la-casa.jpg',
+        imageAlt: 'Vista dividida de La Casa: un muro magenta con ventana ámbar junto al zaguán, iluminado como a mediodía',
       },
       {
         name: 'Lyra',
@@ -105,15 +117,6 @@ const es: LocaleBundle = {
         year: '2026',
         image: '/projects/lyra.jpg',
         imageAlt: 'Galaxia 3D donde cada estrella es un artista, agrupada en constelaciones de géneros',
-      },
-      {
-        name: 'La Casa',
-        blurb: 'La arquitectura emocional de Luis Barragán reconstruida en CSS: muros de color, luz que sigue tu reloj local (la ventana ámbar se enciende de noche) y HTML semántico como cimientos.',
-        stack: ['TypeScript', 'Vite', 'CSS custom properties', 'HTML semántico'],
-        repo: 'https://github.com/osvaldopineda/la-casa',
-        year: '2026',
-        image: '/projects/la-casa.jpg',
-        imageAlt: 'Vista dividida de La Casa: un muro magenta con ventana ámbar junto al zaguán, iluminado como a mediodía',
       },
       {
         name: 'FinDash',
@@ -132,6 +135,16 @@ const es: LocaleBundle = {
         status: 'En desarrollo. Primera parada: Japón',
         image: '/projects/tripsurprise.jpg',
         imageAlt: 'Dos pantallas de teléfono de un viaje a Japón: itinerario por día con cuenta regresiva y reloj dual, y presupuesto en dos monedas',
+      },
+      {
+        name: 'El Mundo Conocido',
+        blurb: 'Mapa interactivo e inmersivo de Poniente: regiones clicables con lore profundo, una línea de tiempo de eras históricas, cartografía dibujada a mano y sonido ambiental procedural.',
+        stack: ['React', 'Leaflet', 'anime.js', 'Web Audio API', 'Zustand'],
+        live: 'https://asoiaf-map.pages.dev',
+        repo: 'https://github.com/osvaldopineda/asoiaf-map',
+        year: '2026',
+        image: '/projects/mundo-conocido.jpg',
+        imageAlt: 'Mapa interactivo de Poniente dibujado a mano con regiones clicables',
       },
     ],
     education: {
@@ -189,6 +202,20 @@ const es: LocaleBundle = {
     offclock: {
       title: { pre: 'Fuera de ', accent: 'horario.' },
       body: 'Cuando no estoy entregando código, probablemente ando tocando guitarra, bajo o batería. Crecí con The Strokes y Arctic Monkeys, a un volumen que molesta a los vecinos. Sobre-ingenierizo proyectos personales para aprender una cosa nueva (ese mapa de Poniente de allá arriba empezó exactamente así), y recargo pilas con una buena cerveza y mejor compañía: mi familia.',
+    },
+    tour: {
+      start: 'Haz el tour',
+      next: 'Siguiente',
+      prev: 'Atrás',
+      done: 'Probarlo',
+      workTitle: 'El camino',
+      workBody: 'Siete años como línea de tiempo. Cada estación enlaza a la empresa real.',
+      approachTitle: 'Cómo trabajo',
+      approachBody: 'Convicciones ganadas en producción, no buzzwords.',
+      projectsTitle: 'Side quests',
+      projectsBody: 'Aquí el scroll avanza de lado. De un estudio de Barragán en CSS a una galaxia musical 3D.',
+      editionTitle: 'Una cosa más',
+      editionBody: 'Este botón cambia el sistema de diseño completo. Mismo contenido, otro mundo. Ándale, presiónalo.',
     },
     contact: {
       statusLine: 'Construyendo desde la Ciudad de México, abierto a remoto y reubicación',

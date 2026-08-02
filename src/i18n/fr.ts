@@ -13,6 +13,7 @@ const fr: LocaleBundle = {
     experience: [
       {
         company: 'Google (via Qualitest)',
+        url: 'https://www.qualitestgroup.com',
         role: 'Ingénieur Logiciel Senior',
         period: 'sept. 2025 - mars 2026',
         highlights: [
@@ -24,7 +25,8 @@ const fr: LocaleBundle = {
       },
       {
         company: 'Pandora’s Way',
-        role: 'Lead Frontend',
+        url: 'https://pandorasway.com',
+        role: 'Lead Frontend / Développeur Fullstack',
         period: 'févr. 2025 - déc. 2025',
         context: 'Temps partiel · bêta d\'une startup en phase d\'amorçage',
         highlights: [
@@ -37,9 +39,14 @@ const fr: LocaleBundle = {
       },
       {
         company: 'Unosquare',
+        url: 'https://www.unosquare.com',
         role: 'Ingénieur Frontend Senior',
         period: 'juin 2024 - août 2025',
-        context: 'Clients grands comptes : Stitch Fix · Life.Church',
+        context: 'Clients grands comptes',
+        clients: [
+          { name: 'Stitch Fix', url: 'https://www.stitchfix.com' },
+          { name: 'Life.Church', url: 'https://www.life.church' },
+        ],
         highlights: [
           'Stitch Fix (2,3M+ clients actifs) : pilotage du refactor frontend avec GraphQL et migration de l\'architecture de contenu vers Contentstack (CMS Headless), avec à la clé +25 % d\'engagement utilisateur.',
           'Life.Church : direction d\'une refonte complète du frontend avec Tailwind CSS et shadcn/ui, construction d\'une bibliothèque de plus de 20 composants documentée dans Storybook et livrée via Vercel.',
@@ -51,6 +58,10 @@ const fr: LocaleBundle = {
         company: 'Invex Bank & Compartamos Bank',
         role: 'Consultant Fintech Senior',
         period: 'mai 2023 - mai 2024',
+        clients: [
+          { name: 'Invex', url: 'https://www.invex.com' },
+          { name: 'Compartamos Banco', url: 'https://www.compartamos.com.mx' },
+        ],
         highlights: [
           'Invex Bank : pilotage d\'une migration legacy vers des micro-frontends servant plus de 50 000 clients : plus de 15 widgets React/TypeScript avec une conformité PCI DSS stricte et des API sécurisées Node.js + PostgreSQL + JWT sur l\'infrastructure on-premise/hybride de la banque.',
           'Compartamos Banco (l\'une des plus grandes banques de microfinance d\'Amérique latine, avec 3,1M+ de clients) : conception d\'une plateforme d\'inclusion financière offline-first (React Native + RealmDB chiffré) avec des backends Java à haute concurrence en architecture hexagonale, conteneurisés avec Docker.',
@@ -59,6 +70,7 @@ const fr: LocaleBundle = {
       },
       {
         company: 'Fondeadora for Business',
+        url: 'https://fondeadora.com',
         role: 'Tech Lead Frontend',
         period: 'mai 2021 - mai 2023',
         highlights: [
@@ -71,6 +83,7 @@ const fr: LocaleBundle = {
       },
       {
         company: 'ProsperIA',
+        url: 'https://prosperia.ai',
         role: 'Développeur Frontend',
         period: 'févr. 2019 - mai 2021',
         highlights: [
@@ -88,14 +101,13 @@ const fr: LocaleBundle = {
     ],
     projects: [
       {
-        name: 'El Mundo Conocido',
-        blurb: 'Carte interactive et immersive de Westeros : régions cliquables avec un lore approfondi, une frise chronologique des ères historiques, une cartographie dessinée à la main et une ambiance sonore procédurale.',
-        stack: ['React', 'Leaflet', 'anime.js', 'Web Audio API', 'Zustand'],
-        live: 'https://asoiaf-map.pages.dev',
-        repo: 'https://github.com/osvaldopineda/asoiaf-map',
+        name: 'La Casa',
+        blurb: 'L\'architecture émotionnelle de Luis Barragán reconstruite en CSS : des murs de couleur, une lumière qui suit votre horloge locale (la fenêtre ambre s\'allume la nuit) et du HTML sémantique pour fondations.',
+        stack: ['TypeScript', 'Vite', 'CSS custom properties', 'HTML sémantique'],
+        repo: 'https://github.com/osvaldopineda/la-casa',
         year: '2026',
-        image: '/projects/mundo-conocido.jpg',
-        imageAlt: 'Carte interactive de Westeros dessinée à la main avec des régions cliquables',
+        image: '/projects/la-casa.jpg',
+        imageAlt: 'Vue divisée de La Casa : un mur magenta avec une fenêtre ambre à côté du vestibule, éclairé comme à midi',
       },
       {
         name: 'Lyra',
@@ -105,15 +117,6 @@ const fr: LocaleBundle = {
         year: '2026',
         image: '/projects/lyra.jpg',
         imageAlt: 'Galaxie 3D où chaque étoile est un artiste, regroupée en constellations de genres',
-      },
-      {
-        name: 'La Casa',
-        blurb: 'L\'architecture émotionnelle de Luis Barragán reconstruite en CSS : des murs de couleur, une lumière qui suit votre horloge locale (la fenêtre ambre s\'allume la nuit) et du HTML sémantique pour fondations.',
-        stack: ['TypeScript', 'Vite', 'CSS custom properties', 'HTML sémantique'],
-        repo: 'https://github.com/osvaldopineda/la-casa',
-        year: '2026',
-        image: '/projects/la-casa.jpg',
-        imageAlt: 'Vue divisée de La Casa : un mur magenta avec une fenêtre ambre à côté du vestibule, éclairé comme à midi',
       },
       {
         name: 'FinDash',
@@ -132,6 +135,16 @@ const fr: LocaleBundle = {
         status: 'En développement. Première étape : le Japon',
         image: '/projects/tripsurprise.jpg',
         imageAlt: 'Deux écrans de téléphone d\'un voyage au Japon : itinéraire jour par jour avec compte à rebours et double horloge, et budget en deux devises',
+      },
+      {
+        name: 'El Mundo Conocido',
+        blurb: 'Carte interactive et immersive de Westeros : régions cliquables avec un lore approfondi, une frise chronologique des ères historiques, une cartographie dessinée à la main et une ambiance sonore procédurale.',
+        stack: ['React', 'Leaflet', 'anime.js', 'Web Audio API', 'Zustand'],
+        live: 'https://asoiaf-map.pages.dev',
+        repo: 'https://github.com/osvaldopineda/asoiaf-map',
+        year: '2026',
+        image: '/projects/mundo-conocido.jpg',
+        imageAlt: 'Carte interactive de Westeros dessinée à la main avec des régions cliquables',
       },
     ],
     education: {
@@ -189,6 +202,20 @@ const fr: LocaleBundle = {
     offclock: {
       title: { pre: 'En dehors du ', accent: 'boulot.' },
       body: 'Quand je ne livre pas de code, je joue probablement de la guitare, de la basse ou de la batterie. Biberonné à The Strokes et Arctic Monkeys, assez fort pour agacer les voisins. Je sur-conçois mes projets perso pour apprendre une nouvelle chose (cette carte de Westeros là-haut a commencé exactement comme ça), et je recharge les batteries avec une bonne bière et une meilleure compagnie : ma famille.',
+    },
+    tour: {
+      start: 'Faire le tour',
+      next: 'Suivant',
+      prev: 'Retour',
+      done: 'Essayer',
+      workTitle: 'Le parcours',
+      workBody: 'Sept ans en frise chronologique. Chaque étape renvoie à l\'entreprise réelle.',
+      approachTitle: 'Ma façon de travailler',
+      approachBody: 'Des convictions gagnées en production, pas des slogans.',
+      projectsTitle: 'Side quests',
+      projectsBody: 'Ici, le scroll avance latéralement. D\'une étude de Barragán en CSS à une galaxie musicale 3D.',
+      editionTitle: 'Une dernière chose',
+      editionBody: 'Ce bouton change tout le système de design. Même contenu, autre monde. Allez-y, appuyez.',
     },
     contact: {
       statusLine: 'Actuellement basé à Mexico, ouvert au télétravail et à la relocalisation',
