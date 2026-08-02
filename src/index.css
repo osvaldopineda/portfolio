@@ -141,6 +141,12 @@
   text-shadow: 3px 3px 0 rgb(var(--clay) / 0.5);
 }
 
+/* The nav wordmark carries a smaller dose of the same misregistration, so
+   the "logo" reads as part of the edition rather than chrome above it. */
+[data-edition='riso'] .nav-wordmark {
+  text-shadow: 1.5px 1.5px 0 rgb(var(--clay) / 0.55);
+}
+
 /* Second-ink misregistration on primary CTAs (decorative, hover-gated). */
 @media (hover: hover) and (pointer: fine) {
   [data-edition='riso'] .bg-ink:hover { box-shadow: 4px 4px 0 rgb(var(--clay)); }

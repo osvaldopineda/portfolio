@@ -83,9 +83,16 @@ export default function EditionToggle() {
         onClick={toggle}
         aria-label={`${ui.nav.editionAria} ${names[edition]}`}
         title={names[nextEdition(edition)]}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-line font-mono text-xs text-ink transition-colors hover:border-ink/30"
+        className="group relative h-9 w-9 overflow-hidden rounded-full border border-line font-mono text-xs text-ink transition-[border-color,transform] duration-150 hover:border-accent/70 active:scale-[0.94]"
       >
-        {NUMERAL[edition]}
+        {/* Mechanical roller: hover feeds in the numeral of the edition you'd
+            get, echoing the print-roller wipe. Static under reduced motion. */}
+        <span aria-hidden="true" className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out-strong group-hover:-translate-y-full motion-reduce:transition-none motion-reduce:group-hover:translate-y-0">
+          {NUMERAL[edition]}
+        </span>
+        <span aria-hidden="true" className="absolute inset-0 flex translate-y-full items-center justify-center text-accent transition-transform duration-300 ease-out-strong group-hover:translate-y-0 motion-reduce:hidden">
+          {NUMERAL[nextEdition(edition)]}
+        </span>
       </button>
     </>
   )

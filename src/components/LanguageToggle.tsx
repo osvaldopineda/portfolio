@@ -5,11 +5,15 @@ import { LOCALES, type Locale } from '../i18n/types'
 const LABEL: Record<Locale, string> = { en: 'EN', es: 'ES', fr: 'FR' }
 const FULL: Record<Locale, string> = { en: 'English', es: 'Español', fr: 'Français' }
 
+// FR hidden until the copy passes Osvaldo's native validation — the locale
+// bundle and all i18n logic stay wired, we just don't render the button.
+const VISIBLE = LOCALES.filter((l) => l !== 'fr')
+
 export default function LanguageToggle() {
   const { locale, setLocale } = useI18n()
   return (
     <div role="group" aria-label="Language" className="flex items-center font-mono text-xs">
-      {LOCALES.map((l, i) => (
+      {VISIBLE.map((l, i) => (
         <Fragment key={l}>
           {i > 0 && <span aria-hidden="true" className="px-0.5 text-muted/50">·</span>}
           <button
