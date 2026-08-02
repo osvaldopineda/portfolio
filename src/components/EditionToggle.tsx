@@ -33,11 +33,6 @@ export default function EditionToggle() {
   }
 
   const toggle = () => {
-    try {
-      localStorage.setItem('edition-hint-seen', '1')
-    } catch {
-      /* storage unavailable */
-    }
     const target = nextEdition(edition)
     const doc = document as DocumentWithVT
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches

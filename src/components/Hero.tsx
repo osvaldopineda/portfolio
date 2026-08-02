@@ -2,7 +2,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { PROFILE } from '../data/cv'
 import { useI18n } from '../i18n/context'
-import TourButton from './TourButton'
 import VariableName from './VariableName'
 
 // Strong ease-out — the stock cubic settles too gently to read as deliberate
@@ -77,7 +76,6 @@ export default function Hero() {
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
-            <TourButton />
           </motion.div>
         </div>
       </div>

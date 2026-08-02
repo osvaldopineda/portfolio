@@ -7,22 +7,22 @@ import { useI18n } from '../i18n/context'
  * One-time spotlight on the edition toggle: 2.5s after a first visit,
  * driver.js dims the page lightly and points at the button; the CTA doesn't
  * explain the magic, it TRIGGERS it (destroys the popover, then clicks the
- * toggle so the print-roller wipe fires). Shows once ever — the same
- * `edition-hint-seen` flag the toggle writes, so anyone who already switched
- * on their own never sees it.
+ * toggle so the print-roller wipe fires). Shows once ever per visitor —
+ * its own flag, deliberately NOT the retired hint's key, so returning
+ * visitors (including Os) get to see the new nudge one time.
  */
 export default function EditionNudge() {
   const { ui } = useI18n()
 
   useEffect(() => {
     try {
-      if (localStorage.getItem('edition-hint-seen')) return
+      if (localStorage.getItem('edition-nudge-seen')) return
     } catch {
       return
     }
     const timer = setTimeout(() => {
       try {
-        localStorage.setItem('edition-hint-seen', '1')
+        localStorage.setItem('edition-nudge-seen', '1')
       } catch {
         /* storage unavailable */
       }

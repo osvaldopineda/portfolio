@@ -81,20 +81,6 @@ export interface UIStrings {
   skills: { title: Heading }
   projects: { title: Heading; lead: string; liveDemo: string; code: string }
   offclock: { title: Heading; body: string }
-  tour: {
-    start: string
-    next: string
-    prev: string
-    done: string
-    workTitle: string
-    workBody: string
-    approachTitle: string
-    approachBody: string
-    projectsTitle: string
-    projectsBody: string
-    editionTitle: string
-    editionBody: string
-  }
   contact: {
     statusLine: string
     titleLine1: string
