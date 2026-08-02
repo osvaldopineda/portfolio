@@ -9,4 +9,4 @@ export const PROFILE = {
   cv: '/osvaldo-pineda-cv.pdf',
 }
 
-export type { Locale, Job, Project, CVData, Stat, SkillGroup, Education } from '../i18n/types'
+export type { Locale, Job, Project, CVData, SkillGroup, Education } from '../i18n/types'

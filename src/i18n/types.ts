@@ -1,11 +1,6 @@
 export type Locale = 'en' | 'es' | 'fr'
 export const LOCALES: Locale[] = ['en', 'es', 'fr']
 
-export interface Stat {
-  value: string
-  label: string
-}
-
 export interface Job {
   company: string
   role: string
@@ -51,7 +46,6 @@ export interface LocalizedProfile {
 
 export interface CVData {
   profile: LocalizedProfile
-  stats: Stat[]
   experience: Job[]
   skills: SkillGroup[]
   projects: Project[]

@@ -26,9 +26,14 @@ export default function Experience() {
               </div>
               {job.context && <p className="mt-1 text-sm text-muted">{job.context}</p>}
 
-              <ul className="mt-5 max-w-3xl space-y-3">
+              {/* Hanging ticks echo the timeline's marker — structure without
+                  the template dot-bullet or the wall-of-paragraphs. */}
+              <ul className="mt-5 max-w-3xl space-y-4">
                 {job.highlights.map((h, j) => (
-                  <li key={j} className="leading-relaxed text-muted">{h}</li>
+                  <li key={j} className="relative pl-6 leading-relaxed text-muted">
+                    <span aria-hidden="true" className="absolute left-0 top-[0.72em] h-px w-3.5 bg-clay/70" />
+                    {h}
+                  </li>
                 ))}
               </ul>
 

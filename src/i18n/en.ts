@@ -10,12 +10,6 @@ const en: LocaleBundle = {
       location: 'Mexico City, Mexico · GMT-6',
       availability: 'Open to remote global collaboration, B2B, and relocation / sponsorship.',
     },
-    stats: [
-      { value: 'Google Search', label: 'accessibility at scale' },
-      { value: 'PCI DSS', label: 'banking-grade fintech' },
-      { value: '2.3M+ users', label: 'Stitch Fix' },
-      { value: '$1M+/mo', label: 'real-time payments' },
-    ],
     experience: [
       {
         company: 'Google (via Qualitest)',
@@ -111,6 +105,15 @@ const en: LocaleBundle = {
         year: '2026',
         image: '/projects/lyra.jpg',
         imageAlt: '3D galaxy where each star is an artist, grouped into glowing genre constellations',
+      },
+      {
+        name: 'La Casa',
+        blurb: 'Luis Barragán’s emotional architecture rebuilt in CSS: walls of color, light that follows your local clock (the amber window turns on at night) and semantic HTML as the foundation.',
+        stack: ['TypeScript', 'Vite', 'CSS custom properties', 'Semantic HTML'],
+        repo: 'https://github.com/osvaldopineda/la-casa',
+        year: '2026',
+        image: '/projects/la-casa.jpg',
+        imageAlt: 'Split view of La Casa: a magenta wall with an amber window next to the entry hall, lit as at noon',
       },
       {
         name: 'FinDash',

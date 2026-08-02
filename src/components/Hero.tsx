@@ -2,7 +2,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { PROFILE } from '../data/cv'
 import { useI18n } from '../i18n/context'
-import Marquee from './Marquee'
 import VariableName from './VariableName'
 
 // Strong ease-out — the stock cubic settles too gently to read as deliberate
@@ -81,8 +80,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      <Marquee />
     </section>
   )
 }

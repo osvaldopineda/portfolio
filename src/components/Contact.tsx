@@ -68,7 +68,11 @@ export default function Contact() {
           {t.statusLine}
         </p>
         <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-          <span className="font-mono">© 2026 Osvaldo Pineda</span>
+          {/* The signature stays in Spanish in every locale — that's the point. */}
+          <span className="font-mono">
+            © 2026 Osvaldo Pineda · Hecho con <span aria-hidden="true" className="text-clay">♥</span>
+            <span className="sr-only">amor</span> en México
+          </span>
           <span className="font-mono">{t.footerSetIn}</span>
         </div>
       </footer>

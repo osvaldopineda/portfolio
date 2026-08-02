@@ -14,15 +14,21 @@ export default function HowIWork() {
           <p className="mt-5 text-[1.05rem] leading-relaxed text-slab-muted">{t.lead}</p>
         </Reveal>
 
-        <div className="border-t border-white/10">
-          {t.opinions.map((o, i) => (
-            <Reveal key={i}>
-              <div className="grid gap-3 border-b border-white/10 py-9 md:grid-cols-[1.1fr_1fr] md:gap-12">
-                <h3 className="serif text-2xl leading-snug md:text-[1.7rem]">{o.claim}</h3>
-                <p className="leading-relaxed text-slab-muted md:pt-1.5">{o.body}</p>
-              </div>
-            </Reveal>
-          ))}
+        {/* Manifesto cascade: each conviction steps further right, no rows,
+            no hairlines — the diagonal is the structure. Offsets are static
+            classes so Tailwind's JIT can see them. */}
+        <div className="space-y-14 md:space-y-16">
+          {t.opinions.map((o, i) => {
+            const step = ['md:ml-0', 'md:ml-[9%]', 'md:ml-[18%]', 'md:ml-[27%]', 'md:ml-[36%]']
+            return (
+              <Reveal key={i} className={step[i % step.length]}>
+                <div className="max-w-xl">
+                  <h3 className="serif text-3xl leading-[1.05] md:text-4xl">{o.claim}</h3>
+                  <p className="mt-4 leading-relaxed text-slab-muted">{o.body}</p>
+                </div>
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -48,17 +48,22 @@ function Links({ p, liveDemo, code }: { p: Project; liveDemo: string; code: stri
   )
 }
 
+/**
+ * Screenshots hang on a mat (raised board, generous padding) like mounted
+ * prints — raw edge-to-edge captures with clashing UIs looked rough against
+ * the paper. The mat is the shot-frame, so Riso's duotone develops over it.
+ */
 function Shot({ p }: { p: Project }) {
   if (!p.image) return null
   const img = (
-    <img src={p.image} alt={p.live ? '' : p.imageAlt ?? ''} loading="lazy" className="aspect-[16/10] w-full object-cover object-top" />
+    <img src={p.image} alt={p.live ? '' : p.imageAlt ?? ''} loading="lazy" className="aspect-[16/10] w-full rounded-sm border border-line object-cover object-top" />
   )
   return p.live ? (
-    <a href={p.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true" className="shot-frame block overflow-hidden rounded-lg border border-line">
+    <a href={p.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true" className="shot-frame block rounded-lg border border-line bg-raised p-4 md:p-6">
       {img}
     </a>
   ) : (
-    <div className="shot-frame overflow-hidden rounded-lg border border-line">{img}</div>
+    <div className="shot-frame rounded-lg border border-line bg-raised p-4 md:p-6">{img}</div>
   )
 }
 
