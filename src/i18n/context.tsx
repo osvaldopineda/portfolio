@@ -21,8 +21,9 @@ function detectLocale(): Locale {
     const saved = localStorage.getItem('locale')
     if (saved && (LOCALES as string[]).includes(saved)) return saved as Locale
   } catch { /* storage unavailable */ }
-  const nav = typeof navigator !== 'undefined' ? navigator.language.slice(0, 2) : 'en'
-  return (LOCALES as string[]).includes(nav) ? (nav as Locale) : 'en'
+  // Always English on first visit — the audience is international recruiters.
+  // No navigator.language sniffing: ES/FR are an explicit choice via the toggle.
+  return 'en'
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {

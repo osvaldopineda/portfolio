@@ -22,7 +22,7 @@ Single-page personal portfolio for Osvaldo Pineda (Senior Fullstack Engineer). S
 - **i18n — `src/i18n/`** is the content layer (custom, no library):
   - `types.ts` — `Locale` (`en|es|fr`), `LOCALES`, and all content interfaces (`CVData`, `UIStrings`, `Heading`, `Opinion`, `LocaleBundle`, etc.).
   - `en.ts` / `es.ts` / `fr.ts` — one `LocaleBundle` each = `{ cv, ui }`. **All copy lives here**, both UI chrome and CV content. EN is the source of truth; ES is final; **FR is pending Osvaldo's native validation before sending to recruiters**.
-  - `context.tsx` — `I18nProvider` + `useI18n()` → `{ locale, setLocale, cv, ui }`. Detects locale from `localStorage('locale')` then `navigator.language`, persists to localStorage, syncs `document.documentElement.lang`.
+  - `context.tsx` — `I18nProvider` + `useI18n()` → `{ locale, setLocale, cv, ui }`. First visit is ALWAYS English (audience: international recruiters — no navigator.language sniffing); `localStorage('locale')` persists an explicit toggle choice, syncs `document.documentElement.lang`.
 - `src/data/cv.ts` — now only `PROFILE` (locale-independent: name, email, github, linkedin, cv path) + re-exports content types from `i18n/types`. **Localized content is NOT here anymore — edit the locale bundles.**
 - `src/index.css` — Tailwind layers, font `@import`, design tokens, `.grain`, `:focus-visible` ring, view-transition + reduced-motion rules.
 - `public/osvaldo-pineda-cv.pdf` — CV, linked via `PROFILE.cv` (`/osvaldo-pineda-cv.pdf`). Favicons (`favicon*.png`, `apple-touch-icon.png`), the social card `og.png` (1200×630, referenced from `index.html` meta tags) and project card screenshots (`projects/*.jpg`, referenced from the locale bundles' `Project.image`) also live in `public/`.
