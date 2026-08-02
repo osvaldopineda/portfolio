@@ -23,7 +23,7 @@ export default function Skills() {
         {cv.skills.map((cat) => (
           <Reveal key={cat.group}>
             <p className="group text-lg leading-relaxed">
-              <span className="serif mr-2 text-[1.7rem] italic leading-none text-clay">{cat.group}.</span>
+              <span className="serif mr-2 text-[1.4rem] leading-none text-clay">{cat.group}.</span>
               {cat.items.map((s, i) => (
                 <span
                   key={s}

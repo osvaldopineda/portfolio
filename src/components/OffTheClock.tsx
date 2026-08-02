@@ -13,7 +13,7 @@ export default function OffTheClock() {
       </Reveal>
 
       <Reveal>
-        <p className="serif mt-6 max-w-2xl text-xl italic leading-relaxed text-ink/90 md:text-2xl">
+        <p className="serif-soft mt-6 max-w-2xl text-xl leading-relaxed text-ink/90 md:text-2xl">
           {t.body}
         </p>
       </Reveal>

@@ -20,7 +20,7 @@ export default function Contact() {
       <Reveal>
         <a
           href={`mailto:${PROFILE.email}`}
-          className="link-underline mt-12 inline-block max-w-full break-words serif text-2xl italic sm:text-3xl md:text-4xl"
+          className="link-underline mt-12 inline-block max-w-full break-words serif-soft text-2xl sm:text-3xl md:text-4xl"
         >
           {PROFILE.email}
         </a>

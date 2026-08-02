@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react'
 /**
  * Renders text as individual letters that react to cursor proximity. The effect
  * is edition-aware (read per frame from data-edition on <html>):
- * - Edición I (editorial): Fraunces opsz/wght axes swell near the pointer.
+ * - Edición I (editorial): Bricolage Grotesque wdth/wght axes — letters near
+ *   the pointer expand from the condensed house width and shed weight.
  * - Edición II (riso): the second-ink misregistration (text-shadow offset)
  *   separates further as the pointer approaches — ink coming off register.
  * DOM is mutated directly (no React re-render per pointermove) and throttled
@@ -35,10 +36,10 @@ export default function VariableName({ text, className }: { text: string; classN
             l.style.textShadow = `${off}px ${off}px 0 rgb(var(--clay) / 0.5)`
             l.style.fontVariationSettings = ''
           } else {
-            // Newsreader axes: opsz 6..72, wght 200..800
-            const wght = Math.round(400 + t * 350)
-            const opsz = Math.round(18 + t * 54)
-            l.style.fontVariationSettings = `'opsz' ${opsz}, 'wght' ${wght}`
+            // Bricolage axes: wdth 75..100, wght 200..800 — expand and lighten
+            const wdth = Math.round(87 + t * 13)
+            const wght = Math.round(800 - t * 180)
+            l.style.fontVariationSettings = `'wdth' ${wdth}, 'wght' ${wght}`
             l.style.textShadow = ''
           }
         }
@@ -52,7 +53,7 @@ export default function VariableName({ text, className }: { text: string; classN
           l.style.textShadow = ''
           l.style.fontVariationSettings = ''
         } else {
-          l.style.fontVariationSettings = "'opsz' 72, 'wght' 400"
+          l.style.fontVariationSettings = "'wdth' 87, 'wght' 800"
           l.style.textShadow = ''
         }
       }
@@ -78,7 +79,7 @@ export default function VariableName({ text, className }: { text: string; classN
           }}
           aria-hidden="true"
           className="inline-block will-change-[font-variation-settings]"
-          style={{ fontVariationSettings: "'opsz' 72, 'wght' 400", transition: 'font-variation-settings 0.18s ease-out' }}
+          style={{ fontVariationSettings: "'wdth' 87, 'wght' 800", transition: 'font-variation-settings 0.18s ease-out' }}
         >
           {ch}
         </span>

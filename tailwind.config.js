@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Newsreader"', 'serif'],
+        serif: ['"Bricolage Grotesque"', 'sans-serif'],
         sans:  ['"Archivo"', 'system-ui', 'sans-serif'],
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },

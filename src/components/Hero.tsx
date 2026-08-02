@@ -37,7 +37,7 @@ export default function Hero() {
     <section id="top" className="relative mx-auto w-full max-w-6xl px-6">
       <div className="flex min-h-[100dvh] flex-col justify-center pt-24 pb-12">
         {/* name — the loudest move on the page */}
-        <h1 className="serif font-normal tracking-tight2">
+        <h1 className="serif tracking-tight2">
           <motion.span {...rise(0.08)} className="block text-[19vw] leading-[0.82] sm:text-[15vw] md:text-[11rem]">
             <VariableName text="Osvaldo" />
           </motion.span>
@@ -51,7 +51,7 @@ export default function Hero() {
           <motion.p {...rise(0.2)} className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
             {cv.profile.role}
           </motion.p>
-          <motion.p {...rise(0.26)} className="serif mt-4 text-2xl italic leading-[1.15] pb-1 md:text-[2rem]">
+          <motion.p {...rise(0.26)} className="serif-soft mt-4 text-2xl leading-[1.15] pb-1 md:text-[2rem]">
             {cv.profile.tagline}
           </motion.p>
           <motion.p {...rise(0.32)} className="mt-5 max-w-prose leading-relaxed text-muted">

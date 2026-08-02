@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -71,11 +71,23 @@
   p { text-wrap: pretty; }
 }
 
-/* Newsreader: editorial voice with real italics and a live optical-size axis.
-   Chose over Fraunces/Instrument Serif deliberately — both are the canonical
-   AI-default display serifs and read as generated. */
+/* Bricolage Grotesque: contemporary grotesk with real character (round 3,
+   2026-08-02 — replaced Newsreader; the elegant-serif look itself read as
+   AI-editorial). `.serif` keeps its name as the display ROLE across the
+   codebase; slightly condensed heavy is the house voice. No italics in the
+   family — `.serif-soft` (lighter, wider) is the contrast voice where the
+   serif italics used to live. Optical sizing stays automatic. */
 .serif {
-  font-family: 'Newsreader', serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-variation-settings: 'wdth' 87;
+  font-optical-sizing: auto;
+}
+.serif-soft {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 500;
+  font-variation-settings: 'wdth' 96;
+  font-optical-sizing: auto;
 }
 
 /* Paper grain — subtle print texture over the whole canvas */

@@ -196,7 +196,7 @@ const en: LocaleBundle = {
       education: 'Education',
       certifications: 'Certifications',
       languages: 'Languages',
-      footerSetIn: 'Set in Newsreader & Archivo · React · Vite · Tailwind',
+      footerSetIn: 'Set in Bricolage Grotesque & Archivo · React · Vite · Tailwind',
     },
   },
 }

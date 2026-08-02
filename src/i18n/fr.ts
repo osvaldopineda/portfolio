@@ -196,7 +196,7 @@ const fr: LocaleBundle = {
       education: 'Formation',
       certifications: 'Certifications',
       languages: 'Langues',
-      footerSetIn: 'Composé en Newsreader et Archivo · React · Vite · Tailwind',
+      footerSetIn: 'Composé en Bricolage Grotesque et Archivo · React · Vite · Tailwind',
     },
   },
 }

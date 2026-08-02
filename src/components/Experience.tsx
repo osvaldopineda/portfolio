@@ -9,34 +9,30 @@ export default function Experience() {
     <section id="work" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionTitle title={<>{t.title.pre}{t.title.accent}{t.title.post}</>} lead={t.lead} />
 
-      <div className="border-t border-line">
+      {/* Timeline: one continuous thread down the left margin, jobs as
+          stations. A short accent tick crosses the thread at each station —
+          deliberately a tick, not the template dot. */}
+      <div className="relative ml-1 border-l border-line pt-2 md:ml-24">
         {cv.experience.map((job) => (
           <Reveal key={job.company}>
-            <article className="group grid gap-6 border-b border-line py-12 transition-colors md:grid-cols-[240px_1fr]">
-              {/* meta */}
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{job.period}</p>
-                <h3 className="serif mt-3 text-3xl leading-tight transition-colors group-hover:text-clay">
+            <article className="group relative pb-16 pl-7 md:pl-12">
+              <span aria-hidden="true" className="absolute -left-[9px] top-2 h-px w-[17px] bg-clay transition-transform duration-200 ease-out-strong md:group-hover:scale-x-125" />
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{job.period}</p>
+              <div className="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-1">
+                <h3 className="serif text-3xl leading-tight transition-colors group-hover:text-clay">
                   {job.company}
                 </h3>
-              </div>
-
-              {/* detail */}
-              <div>
                 <p className="text-base font-semibold">{job.role}</p>
-                {job.context && <p className="mt-0.5 text-sm text-muted">{job.context}</p>}
-
-                <ul className="mt-5 space-y-3">
-                  {job.highlights.map((h, j) => (
-                    <li key={j} className="flex gap-3 leading-relaxed text-muted">
-                      <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-clay" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="mt-6 font-mono text-xs text-muted">{job.stack.join(' · ')}</p>
               </div>
+              {job.context && <p className="mt-1 text-sm text-muted">{job.context}</p>}
+
+              <ul className="mt-5 max-w-3xl space-y-3">
+                {job.highlights.map((h, j) => (
+                  <li key={j} className="leading-relaxed text-muted">{h}</li>
+                ))}
+              </ul>
+
+              <p className="mt-6 font-mono text-xs text-muted">{job.stack.join(' · ')}</p>
             </article>
           </Reveal>
         ))}
