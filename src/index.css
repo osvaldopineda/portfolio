@@ -117,40 +117,58 @@
 }
 .link-underline:focus-visible { background-size: 100% 1px; }
 
-/* Guided-tour popover (driver.js) restyled with the house tokens */
-.driver-popover {
+/* Edition-nudge popover (driver.js) restyled with the house tokens.
+   The `body` prefix outranks driver.css, which Vite injects AFTER this file
+   (its white background was winning in dark mode and drowning the title). */
+body .driver-popover {
   background: rgb(var(--raised));
   color: rgb(var(--ink));
   border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: 0 24px 60px -24px rgb(0 0 0 / 0.4);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px -24px rgb(0 0 0 / 0.45);
   font-family: 'Archivo', system-ui, sans-serif;
-  max-width: 320px;
+  max-width: 300px;
+  padding: 18px 20px 16px;
 }
-.driver-popover-title {
+body .driver-popover .driver-popover-title {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 800;
   font-variation-settings: 'wdth' 87;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
+  line-height: 1.2;
   color: rgb(var(--ink));
 }
-.driver-popover-description { color: rgb(var(--muted)); font-size: 0.88rem; line-height: 1.55; }
-.driver-popover-navigation-btns button {
+body .driver-popover .driver-popover-description {
+  color: rgb(var(--muted));
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-top: 6px;
+}
+body .driver-popover .driver-popover-navigation-btns { margin-top: 14px; }
+body .driver-popover .driver-popover-navigation-btns button {
   border-radius: 999px;
-  padding: 7px 15px;
+  padding: 8px 16px;
   font-family: 'Archivo', system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-shadow: none;
   border: 1px solid transparent;
+  transition: transform 0.15s ease;
 }
-.driver-popover-next-btn, .driver-popover-done-btn { background: rgb(var(--ink)); color: rgb(var(--paper)); }
-.driver-popover-prev-btn { background: transparent; color: rgb(var(--ink)); border-color: var(--line); }
-.driver-popover-close-btn { color: rgb(var(--muted)); }
-.driver-popover-arrow-side-top { border-top-color: rgb(var(--raised)); }
-.driver-popover-arrow-side-bottom { border-bottom-color: rgb(var(--raised)); }
-.driver-popover-arrow-side-left { border-left-color: rgb(var(--raised)); }
-.driver-popover-arrow-side-right { border-right-color: rgb(var(--raised)); }
+body .driver-popover .driver-popover-navigation-btns button:active { transform: scale(0.96); }
+body .driver-popover .driver-popover-next-btn,
+body .driver-popover .driver-popover-done-btn { background: rgb(var(--ink)); color: rgb(var(--paper)); }
+body .driver-popover .driver-popover-prev-btn { background: transparent; color: rgb(var(--ink)); border-color: var(--line); }
+body .driver-popover .driver-popover-close-btn {
+  color: rgb(var(--muted));
+  top: 8px;
+  right: 8px;
+}
+body .driver-popover .driver-popover-close-btn:hover { color: rgb(var(--ink)); }
+body .driver-popover .driver-popover-arrow-side-top { border-top-color: rgb(var(--raised)); }
+body .driver-popover .driver-popover-arrow-side-bottom { border-bottom-color: rgb(var(--raised)); }
+body .driver-popover .driver-popover-arrow-side-left { border-left-color: rgb(var(--raised)); }
+body .driver-popover .driver-popover-arrow-side-right { border-right-color: rgb(var(--raised)); }
 
 /* Thin theme-aware scrollbar */
 ::-webkit-scrollbar { width: 10px; }
