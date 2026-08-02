@@ -8,7 +8,7 @@ type DocumentWithVT = Document & {
   startViewTransition?: (cb: () => void) => { ready: Promise<void> }
 }
 
-const NUMERAL: Record<Edition, string> = { editorial: 'I', riso: 'II' }
+const NUMERAL: Record<Edition, string> = { editorial: 'I', riso: 'II', terminal: 'III' }
 
 /**
  * Cycles the design edition. The switch is the wow moment: a print-roller
@@ -25,6 +25,7 @@ export default function EditionToggle() {
   const names: Record<Edition, string> = {
     editorial: ui.nav.editionEditorial,
     riso: ui.nav.editionRiso,
+    terminal: ui.nav.editionTerminal,
   }
 
   const apply = (e: Edition) => {
@@ -46,10 +47,15 @@ export default function EditionToggle() {
       flushSync(() => apply(target))
     })
     transition.ready.then(() => {
+      // Each edition arrives with its own physics: Riso feeds off the print
+      // roller (top-down), Terminal powers on like a CRT (opens from a
+      // horizontal line), Editorial pulls the sheet back up.
       const wipe =
         target === 'riso'
-          ? ['inset(0 0 100% 0)', 'inset(0 0 0% 0)'] // roller feeds the sheet downward
-          : ['inset(100% 0 0 0)', 'inset(0% 0 0 0)'] // and pulls it back up
+          ? ['inset(0 0 100% 0)', 'inset(0 0 0% 0)']
+          : target === 'terminal'
+            ? ['inset(50% 0 50% 0)', 'inset(0% 0 0% 0)']
+            : ['inset(100% 0 0 0)', 'inset(0% 0 0 0)']
       document.documentElement.animate(
         { clipPath: wipe },
         { duration: 620, easing: 'cubic-bezier(0.32, 0.72, 0, 1)', pseudoElement: '::view-transition-new(root)' },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -50,6 +50,28 @@
     --accent: 111 205 170;       /* #6FCDAA */
     --clay:   245 137 177;       /* #F589B1 */
     --line:   rgba(237,232,219,0.16);
+  }
+
+  /* ================= EDICIÓN III — TERMINAL ==================
+     Screen-native: phosphor CRT. Amber phosphor by day (light),
+     green phosphor by night (dark). Pixel, not paper. */
+  [data-edition='terminal'] {
+    --paper:  243 241 231;       /* #F3F1E7 printout stock */
+    --raised: 250 248 239;       /* #FAF8EF */
+    --ink:    29 35 28;          /* #1D231C */
+    --muted:  87 98 79;          /* #57624F — AA on paper */
+    --accent: 143 87 0;          /* #8F5700 amber phosphor, daylight */
+    --clay:   31 110 70;         /* #1F6E46 green second phosphor */
+    --line:   rgba(29,35,28,0.16);
+  }
+  [data-edition='terminal'].dark {
+    --paper:  11 16 12;          /* #0B100C CRT glass */
+    --raised: 17 24 18;          /* #111812 */
+    --ink:    214 238 217;       /* #D6EED9 */
+    --muted:  143 174 149;       /* #8FAE95 */
+    --accent: 111 227 155;       /* #6FE39B green phosphor */
+    --clay:   232 195 113;       /* #E8C371 amber second phosphor */
+    --line:   rgba(214,238,217,0.16);
   }
 
   html { scroll-behavior: smooth; }
@@ -229,8 +251,75 @@ body .driver-popover .driver-popover-arrow-side-right { border-right-color: rgb(
 [data-edition='riso'] .grain::before { opacity: 0.55; }
 [data-edition='riso'].dark .grain::before { opacity: 0.09; }
 
+/* ================= EDICIÓN III — TERMINAL: treatments =================
+   The edition changes materials, not layout. Screen grammar: mono display,
+   zero radius, scanlines, a blinking caret, prompt-prefixed headings. */
+
+/* Display face: everything set in the machine's own voice */
+[data-edition='terminal'] .serif {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 700;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.04em;
+}
+[data-edition='terminal'] .serif-soft {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 400;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.02em;
+}
+
+/* A screen never rounds a corner */
+[data-edition='terminal'] .rounded-full { border-radius: 0; }
+[data-edition='terminal'] .rounded-lg { border-radius: 0; }
+[data-edition='terminal'] .rounded-sm { border-radius: 0; }
+
+/* Headings answer to a prompt (empty alt text keeps it out of the a11y tree) */
+[data-edition='terminal'] h2.serif::before {
+  content: '> ' / '';
+  color: rgb(var(--accent));
+}
+
+/* Blinking caret after the name's full stop */
+[data-edition='terminal'] h1 span.text-clay::after {
+  content: '▮';
+  margin-left: 0.1em;
+  color: rgb(var(--accent));
+  animation: t-blink 1.15s steps(2, start) infinite;
+}
+@keyframes t-blink { 50% { opacity: 0; } }
+
+/* Phosphor glow on the hero name at rest (VariableName drives it near the cursor) */
+[data-edition='terminal'].dark h1 span[aria-hidden] {
+  text-shadow: 0 0 14px rgb(var(--accent) / 0.35);
+}
+
+/* Scanlines instead of paper grain */
+[data-edition='terminal'] .grain::before {
+  background-image: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0 1px, transparent 1px 3px);
+  opacity: 0.14;
+  mix-blend-mode: normal;
+}
+[data-edition='terminal'].dark .grain::before { opacity: 0.22; }
+
+/* Ghost-glyph canvas backdrop: sits between the root background and the
+   content (negative z-index child of a transparent body), visible only in
+   this edition. Opaque surfaces (slab, mats) naturally cover it. */
+[data-edition='terminal'] { background: rgb(var(--paper)); }
+[data-edition='terminal'] body { background: transparent; }
+.terminal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+[data-edition='terminal'] .terminal-backdrop { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  [data-edition='terminal'] h1 span.text-clay::after { animation: none; }
 }
 
 /* Reduced transparency: the nav goes solid instead of frosted (apple-design) */

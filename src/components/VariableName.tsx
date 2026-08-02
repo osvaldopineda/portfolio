@@ -7,6 +7,8 @@ import { useEffect, useRef } from 'react'
  *   the pointer expand from the condensed house width and shed weight.
  * - Edición II (riso): the second-ink misregistration (text-shadow offset)
  *   separates further as the pointer approaches — ink coming off register.
+ * - Edición III (terminal): phosphor glow intensifies near the pointer,
+ *   like a beam exciting the coating.
  * DOM is mutated directly (no React re-render per pointermove) and throttled
  * with rAF for performance. Fully disabled under prefers-reduced-motion.
  */
@@ -23,17 +25,23 @@ export default function VariableName({ text, className }: { text: string; classN
     const onMove = (e: PointerEvent) => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       rafRef.current = requestAnimationFrame(() => {
-        const riso = document.documentElement.dataset.edition === 'riso'
+        const edition = document.documentElement.dataset.edition
         for (const l of lettersRef.current) {
           if (!l) continue
           const r = l.getBoundingClientRect()
           const dx = e.clientX - (r.left + r.width / 2)
           const dy = e.clientY - (r.top + r.height / 2)
           const t = Math.max(0, 1 - Math.hypot(dx, dy) / 360)
-          if (riso) {
+          if (edition === 'riso') {
             // the pink pass drifts off register near the pointer
             const off = (3 + t * 5).toFixed(1)
             l.style.textShadow = `${off}px ${off}px 0 rgb(var(--clay) / 0.5)`
+            l.style.fontVariationSettings = ''
+          } else if (edition === 'terminal') {
+            // the beam excites the phosphor
+            const blur = Math.round(10 + t * 22)
+            const a = (0.3 + t * 0.45).toFixed(2)
+            l.style.textShadow = `0 0 ${blur}px rgb(var(--accent) / ${a})`
             l.style.fontVariationSettings = ''
           } else {
             // Bricolage axes: wdth 75..100, wght 200..800 — expand and lighten
@@ -46,10 +54,10 @@ export default function VariableName({ text, className }: { text: string; classN
       })
     }
     const onLeave = () => {
-      const riso = document.documentElement.dataset.edition === 'riso'
+      const edition = document.documentElement.dataset.edition
       for (const l of lettersRef.current) {
         if (!l) continue
-        if (riso) {
+        if (edition === 'riso' || edition === 'terminal') {
           l.style.textShadow = ''
           l.style.fontVariationSettings = ''
         } else {

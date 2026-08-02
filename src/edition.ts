@@ -1,5 +1,5 @@
-export type Edition = 'editorial' | 'riso'
-export const EDITIONS: Edition[] = ['editorial', 'riso']
+export type Edition = 'editorial' | 'riso' | 'terminal'
+export const EDITIONS: Edition[] = ['editorial', 'riso', 'terminal']
 
 /**
  * Edition state model (mirrors the pre-paint script in index.html):
@@ -11,7 +11,7 @@ export const EDITIONS: Edition[] = ['editorial', 'riso']
  */
 export function getEdition(): Edition {
   const e = document.documentElement.dataset.edition
-  return e === 'riso' ? 'riso' : 'editorial'
+  return EDITIONS.includes(e as Edition) ? (e as Edition) : 'editorial'
 }
 
 export function setEdition(e: Edition) {

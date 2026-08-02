@@ -8,12 +8,14 @@ import HowIWork from './components/HowIWork'
 import Projects from './components/Projects'
 import OffTheClock from './components/OffTheClock'
 import Contact from './components/Contact'
+import TerminalBackdrop from './components/TerminalBackdrop'
 
 export default function App() {
   return (
     <I18nProvider>
       <MotionConfig reducedMotion="user">
         <div className="grain">
+        <TerminalBackdrop />
         <Nav />
         <main id="main">
           <Hero />

@@ -69,7 +69,7 @@ export interface Opinion {
 }
 
 export interface UIStrings {
-  nav: { work: string; approach: string; skills: string; projects: string; contact: string; cv: string; skipToContent: string; menu: string; editionAria: string; editionEditorial: string; editionRiso: string; editionNudgeTitle: string; editionNudgeBody: string; editionNudgeCta: string }
+  nav: { work: string; approach: string; skills: string; projects: string; contact: string; cv: string; skipToContent: string; menu: string; editionAria: string; editionEditorial: string; editionRiso: string; editionTerminal: string; editionNudgeTitle: string; editionNudgeBody: string; editionNudgeCta: string }
   hero: {
     downloadCv: string
     getInTouch: string
