@@ -101,6 +101,16 @@ const en: LocaleBundle = {
     ],
     projects: [
       {
+        name: 'EXSIX',
+        blurb: 'A gothic web sanctuary for EXSIX, a music and fashion collective: raw WebGL fog shaders, ornament frames traced from their own art, and old-web rituals (a working guestbook, an honest hit counter) built on Astro.',
+        stack: ['Astro', 'WebGL/GLSL', 'CSS Masks', 'SVG'],
+        live: 'https://exsix-web.pages.dev',
+        repo: 'https://github.com/osvaldopineda/exsix-web',
+        year: '2026',
+        image: '/projects/exsix.jpg',
+        imageAlt: 'The EXSIX sigil, a spiked XG monogram inside a hexagram, over a dithered red fog background',
+      },
+      {
         name: 'La Casa',
         blurb: 'Luis Barragán’s emotional architecture rebuilt in CSS: walls of color, light that follows your local clock (the amber window turns on at night) and semantic HTML as the foundation.',
         stack: ['TypeScript', 'Vite', 'CSS custom properties', 'Semantic HTML'],
