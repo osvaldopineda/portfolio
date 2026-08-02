@@ -4,7 +4,7 @@ const fr: LocaleBundle = {
   cv: {
     profile: {
       role: 'Ingénieur Fullstack Senior · SaaS & Fintech pilotés par l\'IA',
-      tagline: 'Je conçois et développe des plateformes web sécurisées et accessibles. Du front au back.',
+      tagline: 'Je conçois et développe des plateformes web sécurisées et accessibles, du front au back.',
       summary:
         'Sept ans dans le SaaS et la fintech, des systèmes bancaires PCI DSS à l\'accessibilité sur Google Search. Je prends en charge l\'architecture frontend de bout en bout et je travaille au contact du produit.',
       location: 'Mexico, Mexique · GMT-6',
@@ -142,13 +142,13 @@ const fr: LocaleBundle = {
     nav: { work: 'Parcours', approach: 'Approche', skills: 'Compétences', projects: 'Projets', contact: 'Contact', cv: 'CV', skipToContent: 'Aller au contenu', menu: 'Menu', editionAria: 'Changer d\'édition du design. Actuelle :', editionEditorial: 'Éditoriale', editionRiso: 'Impression riso', editionHint: 'Changez le design ici' },
     hero: {
       downloadCv: 'Télécharger le CV',
-      getInTouch: 'Me contacter',
+      getInTouch: 'M\'écrire',
       githubAria: 'GitHub',
       linkedinAria: 'LinkedIn',
     },
     experience: {
       title: { pre: 'Sept ans, ', accent: 'livrés en production.' },
-      lead: 'De l\'accessibilité sur Google Search aux plateformes fintech sécurisées : un parcours fait de systèmes fiables, performants et inclusifs.',
+      lead: 'Le chemin parcouru va de l\'accessibilité sur Google Search à des plateformes sécurisées pour des banques et des startups.',
     },
     approach: {
       title: { pre: 'Ce que je défendrai en ', accent: 'revue de code.' },
@@ -160,11 +160,11 @@ const fr: LocaleBundle = {
         },
         {
           claim: 'L\'accessibilité, c\'est le travail que personne ne voit, jusqu\'à ce qu\'on en ait besoin.',
-          body: 'Utilisateurs daltoniens, lecteurs d\'écran, navigation au clavier : ça vit derrière le produit. On ne remarque pas que c\'est là. On remarque très bien quand ça ne l\'est pas. Je l\'ai appris en corrigeant plus de 50 défauts d\'accessibilité sur Google Search.',
+          body: 'Elle vit derrière le produit, dans les lecteurs d\'écran, la navigation au clavier et le contraste des couleurs. Personne ne la remarque tant qu\'elle fonctionne, et tout le monde la remarque le jour où elle manque. Je l\'ai appris en corrigeant plus de 50 défauts d\'accessibilité sur Google Search.',
         },
         {
           claim: 'Teste le cœur, pas les détails cosmétiques.',
-          body: 'Le « happy path » et les cas limites qui comptent vraiment : c\'est là que les tests sont rentables. Le reste, c\'est construire de faux murs pour se rassurer.',
+          body: 'Les tests sont rentables sur le « happy path » et sur les cas limites qui comptent vraiment. Le reste, c\'est construire de faux murs pour se rassurer.',
         },
         {
           claim: 'L\'IA, c\'est Robin. Batman, c\'est toujours moi.',
@@ -178,8 +178,8 @@ const fr: LocaleBundle = {
     },
     skills: { title: { pre: 'La ', accent: 'boîte à outils.' } },
     projects: {
-      title: { pre: 'Ce que je construis ', accent: 'par passion du métier.' },
-      lead: 'Des projets perso où je maîtrise toute la stack : design, ingénierie et tous les détails entre les deux.',
+      title: { pre: 'Side ', accent: 'quests.' },
+      lead: 'Des projets perso où je maîtrise toute la stack, du design à l\'ingénierie et tous les détails entre les deux.',
       liveDemo: 'Démo live',
       code: 'Code',
     },
@@ -189,9 +189,9 @@ const fr: LocaleBundle = {
     },
     contact: {
       statusLine: 'Actuellement basé à Mexico, ouvert au télétravail et à la relocalisation',
-      titleLine1: 'Construisons quelque chose',
-      titleLine2Pre: 'qui ',
-      titleAccent: 'dure.',
+      titleLine1: 'Dites-moi ce que',
+      titleLine2Pre: 'vous ',
+      titleAccent: 'construisez.',
       emailMe: 'M\'écrire',
       education: 'Formation',
       certifications: 'Certifications',

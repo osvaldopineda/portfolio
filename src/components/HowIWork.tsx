@@ -18,10 +18,7 @@ export default function HowIWork() {
           {t.opinions.map((o, i) => (
             <Reveal key={i}>
               <div className="grid gap-3 border-b border-white/10 py-9 md:grid-cols-[1.1fr_1fr] md:gap-12">
-                <h3 className="serif text-2xl leading-snug md:text-[1.7rem]">
-                  <span className="mr-3 align-middle text-[#93A56E]">—</span>
-                  {o.claim}
-                </h3>
+                <h3 className="serif text-2xl leading-snug md:text-[1.7rem]">{o.claim}</h3>
                 <p className="leading-relaxed text-slab-muted md:pt-1.5">{o.body}</p>
               </div>
             </Reveal>

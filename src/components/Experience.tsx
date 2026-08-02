@@ -7,10 +7,7 @@ export default function Experience() {
   const t = ui.experience
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
-      <SectionTitle
-        title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>}
-        lead={t.lead}
-      />
+      <SectionTitle title={<>{t.title.pre}{t.title.accent}{t.title.post}</>} lead={t.lead} />
 
       <div className="border-t border-line">
         {cv.experience.map((job) => (
@@ -38,13 +35,7 @@ export default function Experience() {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {job.stack.map((s) => (
-                    <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-muted">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-6 font-mono text-xs text-muted">{job.stack.join(' · ')}</p>
               </div>
             </article>
           </Reveal>

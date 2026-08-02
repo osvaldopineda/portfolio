@@ -8,10 +8,7 @@ export default function Projects() {
   const t = ui.projects
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
-      <SectionTitle
-        title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>}
-        lead={t.lead}
-      />
+      <SectionTitle title={<>{t.title.pre}{t.title.accent}{t.title.post}</>} lead={t.lead} />
 
       <div className="border-t border-line">
         {cv.projects.map((p) => (
@@ -23,13 +20,7 @@ export default function Projects() {
                   <span className="font-mono text-xs text-muted">{p.year}</span>
                 </div>
                 <p className="mt-5 max-w-xl leading-relaxed text-muted">{p.blurb}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.stack.map((s) => (
-                    <span key={s} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-muted">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-5 font-mono text-xs text-muted">{p.stack.join(' · ')}</p>
                 <div className="mt-6 flex flex-wrap items-center gap-5">
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-clay">

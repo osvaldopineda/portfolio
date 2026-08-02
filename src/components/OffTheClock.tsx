@@ -8,7 +8,7 @@ export default function OffTheClock() {
     <section className="mx-auto max-w-5xl px-6 py-16 md:py-32">
       <Reveal>
         <h2 className="serif text-4xl leading-[1.02] tracking-tight2 md:text-5xl">
-          {t.title.pre}<span className="italic text-accent">{t.title.accent}</span>{t.title.post}
+          {t.title.pre}{t.title.accent}{t.title.post}
         </h2>
       </Reveal>
 

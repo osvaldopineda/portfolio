@@ -4,7 +4,7 @@ const en: LocaleBundle = {
   cv: {
     profile: {
       role: 'Senior Fullstack Engineer · AI-Driven SaaS & Fintech',
-      tagline: 'I design and build secure, accessible web platforms. Front to back.',
+      tagline: 'I design and build secure, accessible web platforms from front to back.',
       summary:
         'Seven years across SaaS and fintech, from banking-grade PCI DSS systems to accessibility on Google Search. I own frontend architecture end to end and work close to product.',
       location: 'Mexico City, Mexico · GMT-6',
@@ -142,13 +142,13 @@ const en: LocaleBundle = {
     nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print', editionHint: 'Switch the design here' },
     hero: {
       downloadCv: 'Download CV',
-      getInTouch: 'Get in touch',
+      getInTouch: 'Email me',
       githubAria: 'GitHub',
       linkedinAria: 'LinkedIn',
     },
     experience: {
       title: { pre: 'Seven years, ', accent: 'shipped to production.' },
-      lead: 'From Google Search accessibility to secure fintech platforms: a track record of dependable, performant, inclusive systems.',
+      lead: 'The road so far runs from accessibility on Google Search to secure platforms for banks and startups.',
     },
     approach: {
       title: { pre: 'Things I’ll defend in a ', accent: 'code review.' },
@@ -160,11 +160,11 @@ const en: LocaleBundle = {
         },
         {
           claim: 'Accessibility is the work nobody sees, until they need it.',
-          body: 'Color-blind users, screen readers, keyboard-only navigation: it lives behind the product. You don’t notice it’s there. You very much notice when it isn’t. I learned that fixing 50+ a11y defects on Google Search.',
+          body: 'It lives behind the product, in screen readers, keyboard navigation and color contrast. Nobody notices it while it works, and everybody notices the day it doesn’t. I learned that fixing 50+ a11y defects on Google Search.',
         },
         {
           claim: 'Test the core, not the cosmetics.',
-          body: 'The happy path and the edge cases that actually matter: that’s where tests earn their keep. Everything else is building fake walls to feel safe.',
+          body: 'Tests earn their keep on the happy path and on the edge cases that actually matter. Everything else is building fake walls to feel safe.',
         },
         {
           claim: 'AI is Robin. I’m still Batman.',
@@ -178,8 +178,8 @@ const en: LocaleBundle = {
     },
     skills: { title: { pre: 'The ', accent: 'toolkit.' } },
     projects: {
-      title: { pre: 'Things I build ', accent: 'for the craft.' },
-      lead: 'Side projects where I get to own the whole stack: design, engineering and the details in between.',
+      title: { pre: 'Side ', accent: 'quests.' },
+      lead: 'Personal projects where I own the whole stack, from design to engineering to the details in between.',
       liveDemo: 'Live demo',
       code: 'Code',
     },
@@ -189,9 +189,9 @@ const en: LocaleBundle = {
     },
     contact: {
       statusLine: 'Currently building from Mexico City, open to remote & relocation',
-      titleLine1: 'Let’s build something',
-      titleLine2Pre: 'that ',
-      titleAccent: 'lasts.',
+      titleLine1: 'Tell me what',
+      titleLine2Pre: 'you’re ',
+      titleAccent: 'building.',
       emailMe: 'Email me',
       education: 'Education',
       certifications: 'Certifications',

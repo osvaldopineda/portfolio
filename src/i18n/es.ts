@@ -4,7 +4,7 @@ const es: LocaleBundle = {
   cv: {
     profile: {
       role: 'Ingeniero Fullstack Senior · SaaS y Fintech con IA',
-      tagline: 'Diseño y construyo plataformas web seguras y accesibles. Del front al back.',
+      tagline: 'Diseño y construyo plataformas web seguras y accesibles, del front al back.',
       summary:
         'Siete años en SaaS y fintech, de sistemas bancarios PCI DSS a accesibilidad en Google Search. Soy dueño de la arquitectura frontend de punta a punta y trabajo cerca de producto.',
       location: 'Ciudad de México, México · GMT-6',
@@ -142,13 +142,13 @@ const es: LocaleBundle = {
     nav: { work: 'Experiencia', approach: 'Enfoque', skills: 'Skills', projects: 'Proyectos', contact: 'Contacto', cv: 'CV', skipToContent: 'Saltar al contenido', menu: 'Menú', editionAria: 'Cambiar edición de diseño. Actual:', editionEditorial: 'Editorial', editionRiso: 'Impresión riso', editionHint: 'Cambia el diseño aquí' },
     hero: {
       downloadCv: 'Descargar CV',
-      getInTouch: 'Contáctame',
+      getInTouch: 'Escríbeme',
       githubAria: 'GitHub',
       linkedinAria: 'LinkedIn',
     },
     experience: {
       title: { pre: 'Siete años, ', accent: 'en producción.' },
-      lead: 'De la accesibilidad en Google Search a plataformas fintech seguras: un historial de sistemas confiables, performantes e inclusivos.',
+      lead: 'El camino hasta ahora va de la accesibilidad en Google Search a plataformas seguras para bancos y startups.',
     },
     approach: {
       title: { pre: 'Cosas que defiendo en un ', accent: 'code review.' },
@@ -160,11 +160,11 @@ const es: LocaleBundle = {
         },
         {
           claim: 'La accesibilidad es el trabajo que nadie ve, hasta que lo necesita.',
-          body: 'Usuarios daltónicos, lectores de pantalla, navegación solo con teclado: vive detrás del producto. No notas que está. Sí notas cuando no está. Lo aprendí resolviendo 50+ defectos de accesibilidad en Google Search.',
+          body: 'Vive detrás del producto, en los lectores de pantalla, la navegación con teclado y el contraste de color. Nadie la nota mientras funciona, y todos la notan el día que falla. Lo aprendí resolviendo 50+ defectos de accesibilidad en Google Search.',
         },
         {
           claim: 'Prueba el núcleo, no los adornos.',
-          body: 'El happy path y los edge cases que de verdad importan: ahí es donde las pruebas valen la pena. Todo lo demás es levantar paredes falsas para sentirte seguro.',
+          body: 'Las pruebas valen la pena en el happy path y en los edge cases que de verdad importan. Todo lo demás es levantar paredes falsas para sentirte seguro.',
         },
         {
           claim: 'La IA es Robin. Batman sigo siendo yo.',
@@ -178,8 +178,8 @@ const es: LocaleBundle = {
     },
     skills: { title: { pre: 'El ', accent: 'toolkit.' } },
     projects: {
-      title: { pre: 'Cosas que construyo ', accent: 'por el oficio.' },
-      lead: 'Proyectos personales donde soy dueño de todo el stack: diseño, ingeniería y los detalles que van en medio.',
+      title: { pre: 'Side ', accent: 'quests.' },
+      lead: 'Proyectos personales donde soy dueño de todo el stack, del diseño a la ingeniería y los detalles que van en medio.',
       liveDemo: 'Demo en vivo',
       code: 'Código',
     },
@@ -189,9 +189,9 @@ const es: LocaleBundle = {
     },
     contact: {
       statusLine: 'Construyendo desde la Ciudad de México, abierto a remoto y reubicación',
-      titleLine1: 'Construyamos algo',
-      titleLine2Pre: 'que ',
-      titleAccent: 'perdure.',
+      titleLine1: 'Cuéntame qué',
+      titleLine2Pre: 'estás ',
+      titleAccent: 'construyendo.',
       emailMe: 'Escríbeme',
       education: 'Educación',
       certifications: 'Certificaciones',

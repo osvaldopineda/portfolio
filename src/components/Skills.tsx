@@ -1,5 +1,4 @@
 import Reveal from './Reveal'
-import SectionTitle from './SectionTitle'
 import { useI18n } from '../i18n/context'
 
 /**
@@ -14,7 +13,11 @@ export default function Skills() {
   const t = ui.skills
   return (
     <section id="skills" className="mx-auto max-w-6xl px-6 py-20 md:py-36">
-      <SectionTitle title={<>{t.title.pre}<span className="italic text-clay">{t.title.accent}</span>{t.title.post}</>} />
+      {/* Deliberately the smallest heading on the page — a colophon is signed,
+          not announced. Part of breaking the one-heading-formula-everywhere tell. */}
+      <Reveal className="mb-10">
+        <h2 className="serif text-2xl tracking-tight2 md:text-3xl">{t.title.pre}{t.title.accent}{t.title.post}</h2>
+      </Reveal>
 
       <div className="max-w-3xl space-y-9 border-t border-line pt-12 md:ml-[24%]">
         {cv.skills.map((cat) => (

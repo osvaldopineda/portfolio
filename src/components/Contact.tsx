@@ -13,7 +13,7 @@ export default function Contact() {
         <h2 className="serif text-5xl leading-[0.98] tracking-tight2 md:text-8xl">
           {t.titleLine1}
           <br />
-          {t.titleLine2Pre}<span className="italic text-clay">{t.titleAccent}</span>
+          {t.titleLine2Pre}{t.titleAccent}
         </h2>
       </Reveal>
 
