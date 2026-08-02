@@ -5,25 +5,27 @@
 @tailwind utilities;
 
 @layer base {
-  /* Light — warm printed paper, espresso ink */
+  /* Light — "Imprenta": near-white book paper, warm black, one ink of
+     emphasis (oxblood). Replaced the beige+olive cluster (the canonical
+     AI-editorial palette) on 2026-08-02 — palette A of the proposals. */
   :root {
-    --paper:  234 224 213;       /* #EAE0D5 almond cream */
-    --raised: 242 236 225;       /* #F2ECE1 raised surface */
-    --ink:    42 36 30;          /* #2A241E warm espresso ink */
-    --muted:  107 95 80;         /* #6B5F50 warm taupe — AA 4.7:1 on paper */
-    --accent: 88 100 64;         /* #586440 olive/sage (brand) — AA 4.8:1 on paper */
-    --clay:   94 80 63;          /* #5E503F stone brown (warm secondary) */
-    --line:   rgba(42,36,30,0.13);
+    --paper:  250 249 245;       /* #FAF9F5 book paper */
+    --raised: 255 255 252;       /* #FFFFFC raised surface */
+    --ink:    28 24 21;          /* #1C1815 warm black */
+    --muted:  92 84 76;          /* #5C544C — AA 6.4:1 on paper */
+    --accent: 122 39 42;         /* #7A272A oxblood — AA 8.5:1 on paper */
+    --clay:   122 39 42;         /* single-ink discipline: clay = accent */
+    --line:   rgba(28,24,21,0.14);
   }
-  /* Dark — warm black, cream ink */
+  /* Dark — ink-black stock, rosewood ink */
   .dark {
-    --paper:  27 25 21;          /* #1B1915 */
-    --raised: 37 33 25;          /* #252119 */
-    --ink:    234 224 213;       /* #EAE0D5 almond cream */
-    --muted:  168 156 138;       /* #A89C8A */
-    --accent: 147 165 110;       /* #93A56E luminous olive */
-    --clay:   179 154 110;       /* #B39A6E warm tan */
-    --line:   rgba(234,224,213,0.14);
+    --paper:  23 19 16;          /* #171310 */
+    --raised: 31 26 22;          /* #1F1A16 */
+    --ink:    237 230 220;       /* #EDE6DC */
+    --muted:  169 158 146;       /* #A99E92 */
+    --accent: 206 128 131;       /* #CE8083 luminous oxblood/rosewood */
+    --clay:   206 128 131;       /* single ink in dark too */
+    --line:   rgba(237,230,220,0.16);
   }
 
   /* ================= EDICIÓN II — RISO ==================
@@ -54,7 +56,8 @@
     @apply bg-paper text-ink font-sans antialiased;
     transition: background-color 0.5s ease, color 0.5s ease;
   }
-  ::selection { background: rgb(var(--clay)); color: #fff; }
+  /* Paper-on-ink selection: keeps contrast in both themes (rosewood + white failed) */
+  ::selection { background: rgb(var(--accent)); color: rgb(var(--paper)); }
 
   /* Visible keyboard focus — consistent ring, never relies on color alone */
   :focus-visible {
