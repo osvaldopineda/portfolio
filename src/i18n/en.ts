@@ -155,7 +155,7 @@ const en: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print', editionTerminal: 'Terminal', editionNudgeTitle: 'One site, two designs', editionNudgeBody: 'This button swaps the whole design system on the spot.', editionNudgeCta: 'Show me the magic' },
+    nav: { work: 'Work', approach: 'Approach', skills: 'Skills', projects: 'Projects', contact: 'Contact', cv: 'CV', skipToContent: 'Skip to content', menu: 'Menu', editionAria: 'Switch design edition. Current:', editionEditorial: 'Editorial', editionRiso: 'Riso print', editionTerminal: 'Terminal', editionNudgeTitle: 'One site, three designs', editionNudgeBody: 'This button swaps the whole design system on the spot.', editionNudgeCta: 'Show me the magic' },
     hero: {
       downloadCv: 'Download CV',
       getInTouch: 'Email me',
