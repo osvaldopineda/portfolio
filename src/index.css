@@ -6,25 +6,26 @@
 
 @layer base {
   /* Light — "Imprenta": near-white book paper, warm black, one ink of
-     emphasis (oxblood). Replaced the beige+olive cluster (the canonical
-     AI-editorial palette) on 2026-08-02 — palette A of the proposals. */
+     emphasis (printer's ultramarine). The first ink was oxblood, swapped
+     2026-08-02: in Mexico that guinda reads institutional (IPN / Invex /
+     Morena). Blue working ink carries the same print story with no flag. */
   :root {
     --paper:  250 249 245;       /* #FAF9F5 book paper */
     --raised: 255 255 252;       /* #FFFFFC raised surface */
     --ink:    28 24 21;          /* #1C1815 warm black */
     --muted:  92 84 76;          /* #5C544C — AA 6.4:1 on paper */
-    --accent: 122 39 42;         /* #7A272A oxblood — AA 8.5:1 on paper */
-    --clay:   122 39 42;         /* single-ink discipline: clay = accent */
+    --accent: 43 57 144;         /* #2B3990 ultramarine — AA 9:1 on paper */
+    --clay:   43 57 144;         /* single-ink discipline: clay = accent */
     --line:   rgba(28,24,21,0.14);
   }
-  /* Dark — ink-black stock, rosewood ink */
+  /* Dark — ink-black stock, periwinkle ink */
   .dark {
     --paper:  23 19 16;          /* #171310 */
     --raised: 31 26 22;          /* #1F1A16 */
     --ink:    237 230 220;       /* #EDE6DC */
     --muted:  169 158 146;       /* #A99E92 */
-    --accent: 206 128 131;       /* #CE8083 luminous oxblood/rosewood */
-    --clay:   206 128 131;       /* single ink in dark too */
+    --accent: 163 179 245;       /* #A3B3F5 luminous ultramarine */
+    --clay:   163 179 245;       /* single ink in dark too */
     --line:   rgba(237,230,220,0.16);
   }
 

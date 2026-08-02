@@ -5,6 +5,7 @@ import { useI18n } from '../i18n/context'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggle from './LanguageToggle'
 import EditionToggle from './EditionToggle'
+import EditionNudge from './EditionNudge'
 
 export default function Nav() {
   const { ui } = useI18n()
@@ -81,6 +82,7 @@ export default function Nav() {
             <LanguageToggle />
           </div>
           <EditionToggle />
+          <EditionNudge />
           <ThemeToggle />
           <a
             href={PROFILE.cv}

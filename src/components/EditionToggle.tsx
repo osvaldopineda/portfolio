@@ -20,14 +20,6 @@ export default function EditionToggle() {
   const [edition, setState] = useState<Edition>(() =>
     typeof document !== 'undefined' ? getEdition() : 'editorial',
   )
-  // One-time discoverability hint; retires forever after the first switch.
-  const [hint, setHint] = useState<boolean>(() => {
-    try {
-      return !localStorage.getItem('edition-hint-seen')
-    } catch {
-      return false
-    }
-  })
   const btnRef = useRef<HTMLButtonElement>(null)
 
   const names: Record<Edition, string> = {
@@ -46,7 +38,6 @@ export default function EditionToggle() {
     } catch {
       /* storage unavailable */
     }
-    setHint(false)
     const target = nextEdition(edition)
     const doc = document as DocumentWithVT
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -73,11 +64,6 @@ export default function EditionToggle() {
 
   return (
     <>
-      {hint && (
-        <span className="hidden items-center gap-1.5 font-mono text-[11px] text-muted lg:flex">
-          {ui.nav.editionHint} <span aria-hidden="true">→</span>
-        </span>
-      )}
       <button
         id="edition-toggle"
         ref={btnRef}

@@ -9,7 +9,7 @@ export default function HowIWork() {
       <div className="mx-auto max-w-5xl px-6 py-20 md:py-36">
         <Reveal className="mb-16 max-w-2xl">
           <h2 className="serif text-4xl leading-[1.02] tracking-tight2 md:text-6xl">
-            {t.title.pre}<span className="serif-soft text-[#CE8083]">{t.title.accent}</span>{t.title.post}
+            {t.title.pre}<span className="serif-soft text-[#A3B3F5]">{t.title.accent}</span>{t.title.post}
           </h2>
           <p className="mt-5 text-[1.05rem] leading-relaxed text-slab-muted">{t.lead}</p>
         </Reveal>

@@ -155,7 +155,7 @@ const fr: LocaleBundle = {
     },
   },
   ui: {
-    nav: { work: 'Parcours', approach: 'Approche', skills: 'Compétences', projects: 'Projets', contact: 'Contact', cv: 'CV', skipToContent: 'Aller au contenu', menu: 'Menu', editionAria: 'Changer d\'édition du design. Actuelle :', editionEditorial: 'Éditoriale', editionRiso: 'Impression riso', editionHint: 'Changez le design ici' },
+    nav: { work: 'Parcours', approach: 'Approche', skills: 'Compétences', projects: 'Projets', contact: 'Contact', cv: 'CV', skipToContent: 'Aller au contenu', menu: 'Menu', editionAria: 'Changer d\'édition du design. Actuelle :', editionEditorial: 'Éditoriale', editionRiso: 'Impression riso', editionNudgeTitle: 'Un site, deux designs', editionNudgeBody: 'Ce bouton change tout le système de design instantanément.', editionNudgeCta: 'Montrez-moi la magie' },
     hero: {
       downloadCv: 'Télécharger le CV',
       getInTouch: 'M\'écrire',
