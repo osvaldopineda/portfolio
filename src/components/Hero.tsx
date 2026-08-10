@@ -55,6 +55,12 @@ export default function Hero() {
           <motion.p {...rise(0.32)} className="mt-5 max-w-prose leading-relaxed text-muted">
             {cv.profile.summary}
           </motion.p>
+          {/* Where he is and what timezone he answers in. The audience arrives
+              from a CV, internationally: this used to live only in 12px mono at
+              the very bottom of a 13,600px page. One quiet line, no badge. */}
+          <motion.p {...rise(0.35)} className="mt-3 text-sm text-muted">
+            {cv.profile.location}
+          </motion.p>
 
           <motion.div {...rise(0.38)} className="mt-8 flex flex-wrap items-center gap-3">
             <a

@@ -2,8 +2,8 @@ import Reveal from './Reveal'
 import { useI18n } from '../i18n/context'
 
 /**
- * Colophon layout: each group is one running editorial line — the group name
- * in italic display type leading its tools as flowing text. No boxes, no
+ * Colophon layout: each group is one running editorial line, the group name
+ * in display type leading its tools as flowing text. No boxes, no
  * per-row hairlines, no grid: the third consecutive boxed section was what
  * made the page feel templated. The offset mirrors the hero's asymmetry.
  * Spotlight on hover is decorative only, so items stay out of the tab order.

@@ -27,8 +27,11 @@ export default {
         accent: 'rgb(var(--accent) / <alpha-value>)',
         clay:   'rgb(var(--clay) / <alpha-value>)',
         line:   'var(--line)',
-        // Constant ink-slab surface (same in both themes) for the contrast band
-        slab:     '#1C1A17',
+        // Ink-slab surface for the contrast band. The ink stays constant, but
+        // the surface has to move in dark: #1C1A17 against dark paper #171310
+        // was an invisible seam, so the page's only structural break vanished
+        // for everyone arriving in dark mode. Lifted, not themed (see index.css).
+        slab:     'rgb(var(--slab) / <alpha-value>)',
         'slab-ink': '#ECE7DC',
         'slab-muted': '#9C9384',
       },
