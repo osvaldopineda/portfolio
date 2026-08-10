@@ -68,10 +68,10 @@ export default function Nav() {
         {ui.nav.skipToContent}
       </a>
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="serif nav-wordmark text-2xl leading-none">
+        <a href="#top" className="serif nav-wordmark whitespace-nowrap text-2xl leading-none">
           Osvaldo Pineda<span className="text-clay">.</span>
         </a>
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -88,7 +88,7 @@ export default function Nav() {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <LanguageToggle />
           </div>
           <EditionToggle />
@@ -98,7 +98,7 @@ export default function Nav() {
             href={PROFILE.cv}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper transition-transform duration-150 hover:-translate-y-0.5 active:scale-[0.97]"
+            className="rounded-full bg-ink px-4 py-2.5 text-sm font-medium text-paper transition-transform duration-150 hover:-translate-y-0.5 active:scale-[0.97]"
           >
             {ui.nav.cv}
           </a>
@@ -108,7 +108,7 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={ui.nav.menu}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-[border-color,transform] duration-150 hover:border-ink/40 active:scale-[0.94] md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-[border-color,transform] duration-150 hover:border-ink/40 active:scale-[0.94] lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -116,7 +116,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-line bg-paper px-6 py-4 md:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-paper px-6 py-4 lg:hidden">
           <div className="flex flex-col">
             {links.map((l) => (
               <a

@@ -17,6 +17,7 @@
     --accent: 43 57 144;         /* #2B3990 ultramarine — AA 9:1 on paper */
     --clay:   43 57 144;         /* single-ink discipline: clay = accent */
     --line:   rgba(28,24,21,0.14);
+    --slab:   28 26 23;          /* #1C1A17 ink band, darker than the paper */
   }
   /* Dark — ink-black stock, periwinkle ink */
   .dark {
@@ -27,6 +28,10 @@
     --accent: 163 179 245;       /* #A3B3F5 luminous ultramarine */
     --clay:   163 179 245;       /* single ink in dark too */
     --line:   rgba(237,230,220,0.16);
+    /* The band is the RAISED surface in dark, not a darker one: against #171310
+       the old constant #1C1A17 was a seam nobody could see, so the Approach
+       section lost its framing for every visitor who lands in dark mode. */
+    --slab:   42 38 32;          /* #2A2620 */
   }
 
   /* ================= EDICIÓN II — RISO ==================
@@ -211,9 +216,9 @@ body .driver-popover .driver-popover-arrow-side-right { border-right-color: rgb(
    The edition changes materials, not layout. Print-shop grammar:
    near-square corners, misregistered second ink, duotone imagery. */
 
-/* Display face: Fraunces is Edición I only. Riso sets display in heavy Geist.
-   The !important neutralises stale inline font-variation axes left by the
-   Edición I cursor effect when switching live. */
+/* Display face: Bricolage is Edición I only. Riso sets display in expanded
+   Archivo. The !important neutralises stale inline font-variation axes left by
+   the Edición I cursor effect when switching live. */
 [data-edition='riso'] .serif {
   /* expanded black Archivo — print-poster display; the wdth axis is the point */
   font-family: 'Archivo', system-ui, sans-serif;

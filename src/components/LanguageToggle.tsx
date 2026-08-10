@@ -21,7 +21,7 @@ export default function LanguageToggle() {
             aria-pressed={l === locale}
             lang={l}
             aria-label={FULL[l]}
-            className={`rounded-sm px-1 py-1 transition-colors ${
+            className={`rounded-sm px-2 py-2 transition-colors ${
               l === locale
                 ? 'text-ink underline decoration-accent decoration-2 underline-offset-4'
                 : 'text-muted hover:text-ink'

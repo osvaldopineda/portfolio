@@ -86,7 +86,9 @@ export default function VariableName({ text, className }: { text: string; classN
             lettersRef.current[i] = el
           }}
           aria-hidden="true"
-          className="inline-block will-change-[font-variation-settings]"
+          // select-none: without it, copying the name yields "OsvaldoOsvaldo"
+          // (sr-only label + per-letter spans) and Cmd+F can't match it.
+          className="inline-block select-none will-change-[font-variation-settings]"
           style={{ fontVariationSettings: "'wdth' 87, 'wght' 800", transition: 'font-variation-settings 0.18s ease-out' }}
         >
           {ch}

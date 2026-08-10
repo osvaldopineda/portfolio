@@ -33,13 +33,15 @@ const useRail = () => {
 function Links({ p, liveDemo, code }: { p: Project; liveDemo: string; code: string }) {
   return (
     <div className="flex flex-wrap items-center gap-5">
+      {/* py-2/-my-2: 20px of text is a 36px touch target without moving a pixel
+          of the layout. Thumbs on a phone, not a mouse. */}
       {p.live && (
-        <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-clay">
+        <a href={p.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 py-2 -my-2 text-sm font-medium transition-colors hover:text-clay">
           {liveDemo} <ArrowUpRight className="h-4 w-4" />
         </a>
       )}
       {p.repo && (
-        <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink">
+        <a href={p.repo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 py-2 -my-2 text-sm font-medium text-muted transition-colors hover:text-ink">
           <Github className="h-4 w-4" /> {code}
         </a>
       )}
@@ -119,22 +121,54 @@ function Rail({ projects, liveDemo, code }: { projects: Project[]; liveDemo: str
   // Keyboard path: focusing a card scrolls the page to the spot where that
   // card is fully in view — transform-based panning breaks the browser's own
   // scroll-into-view, so we do it ourselves.
-  const focusCard = (i: number) => {
+  //
+  // Solve from measured geometry, never from the card's index: the track pans
+  // by `shift` px over `travel` px of scroll, so the card whose layout offset
+  // is `offset` needs progress = (offset - pad) / shift to land at the left
+  // padding. Index arithmetic assumed cards were evenly spaced and dropped
+  // focus off-screen once they weren't. Both mappings now read the same
+  // `shift`, so they cannot drift apart.
+  const focusCard = (card: HTMLElement) => {
     const section = sectionRef.current
-    if (!section) return
-    const top = section.offsetTop
+    const track = trackRef.current
+    if (!section || !track || shift <= 0) return
+    // Layout offset inside the track — both rects carry the same translateX,
+    // so the transform cancels out.
+    const offset = card.getBoundingClientRect().left - track.getBoundingClientRect().left
+    const pad = window.innerWidth * 0.1 // matches px-[10vw]
+    const progress = Math.min(1, Math.max(0, (offset - pad) / shift))
+    const top = section.getBoundingClientRect().top + window.scrollY
     const travel = section.offsetHeight - window.innerHeight
-    window.scrollTo({ top: top + (i / Math.max(1, projects.length - 1)) * travel, behavior: 'auto' })
+    window.scrollTo({ top: top + progress * travel, behavior: 'auto' })
+    // The browser's scroll-into-view already ran by now, and `overflow: hidden`
+    // does NOT stop it: it scrolls the sticky holder's hidden overflow sideways
+    // to chase a card that only ever moves by transform. That silent scrollLeft
+    // dragged the whole track off-screen. Put it back — every frame the panning
+    // is ours alone.
+    const holder = track.parentElement
+    if (holder) {
+      holder.scrollLeft = 0
+      requestAnimationFrame(() => { holder.scrollLeft = 0 })
+    }
   }
 
   return (
-    <div ref={sectionRef} style={{ height: `${projects.length * 85 + 60}vh` }}>
+    // `relative`: useScroll warns (and may mis-measure offsets) when its target
+    // is statically positioned.
+    <div ref={sectionRef} className="relative" style={{ height: `${projects.length * 85 + 60}vh` }}>
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
         {/* Card width is capped so mat + caption always fit inside 100vh —
             at 62vw the mats clipped off the top of the viewport. */}
         <motion.div ref={trackRef} style={{ x }} className="flex w-max items-center gap-[5vw] px-[10vw]">
-          {projects.map((p, i) => (
-            <article key={p.name} className="group w-[46vw] max-w-[620px] shrink-0" onFocus={() => focusCard(i)}>
+          {projects.map((p) => (
+            <article
+              key={p.name}
+              className="group w-[46vw] max-w-[620px] shrink-0"
+              // A card with no live demo and no repo has no focusable child, so
+              // Tab used to skip past it and the rail never panned there.
+              tabIndex={p.live || p.repo ? undefined : 0}
+              onFocus={(e) => focusCard(e.currentTarget)}
+            >
               <Shot p={p} />
               <div className="mt-5 flex items-baseline gap-4">
                 <h3 className="serif text-2xl leading-none transition-colors group-hover:text-clay md:text-3xl">{p.name}</h3>
